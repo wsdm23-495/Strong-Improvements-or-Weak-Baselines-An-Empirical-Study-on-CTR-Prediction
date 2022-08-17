@@ -1,0 +1,16 @@
+base_config: ./config/AFN
+base_expid: AFN+_Frappe
+dataset_id: Frappe
+
+dataset_config:
+    Frappe:
+        data_format: h5
+        data_root: './data/'
+        train_data: ./data/Frappe/train.h5
+        valid_data: ./data/Frappe/valid.h5
+        test_data: ./data/Frappe/test.h5
+
+tuner_space:
+    model_root: './checkpoints/'
+    batch_norm: False
+    batch_size: [64,128,256,512,1024,2048,3072,4096,5120,6144,7168,8192,9216,100,500,1000,2000,4000,6000,80000,10000]

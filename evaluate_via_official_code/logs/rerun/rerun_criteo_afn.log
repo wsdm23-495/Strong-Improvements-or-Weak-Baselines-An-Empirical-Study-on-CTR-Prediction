@@ -1,0 +1,814 @@
+/data/slc/anaconda3/envs/tf1/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/data/slc/anaconda3/envs/tf1/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/data/slc/anaconda3/envs/tf1/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:528: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/data/slc/anaconda3/envs/tf1/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:529: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/data/slc/anaconda3/envs/tf1/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:530: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/data/slc/anaconda3/envs/tf1/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:535: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+task_type  train
+model_dir  ./checkpoint/criteo/20220213
+data_dir  ../data/criteo/
+dt_dir  20220213
+feature_size  2100000
+field_size  39
+embedding_size  10
+batch_size  4096
+deep_layers  400,400,400
+dropout  1.,1.,1.
+optimizer  Adam
+learning_rate  0.001
+batch_norm_decay  0.9
+batch_norm  True
+ensemble  False
+tr_files: ['../data/criteo/train.libsvm']
+va_files: ['../data/criteo/valid.libsvm']
+te_files: ['../data/criteo/test.libsvm']
+existing model cleaned at ./checkpoint/criteo/20220213
+INFO:tensorflow:Using config: {'_model_dir': './checkpoint/criteo/20220213', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': 8058, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+  allow_growth: true
+}
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7fff21733e90>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+
+WARNING: The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+If you depend on functionality not listed there, please file an issue.
+
+INFO:tensorflow:Not using Distribute Coordinator.
+INFO:tensorflow:Running training and evaluation locally (non-distributed).
+INFO:tensorflow:Start train and evaluate loop. The evaluate will happen after every checkpoint. Checkpoint frequency is determined based on RunConfig arguments: save_checkpoints_steps 8058 or save_checkpoints_secs None.
+WARNING:tensorflow:From /data/slc/anaconda3/envs/tf1/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Parsing ['../data/criteo/train.libsvm']
+INFO:tensorflow:Calling model_fn.
+shape of embeddings: [None, 39, 10]
+[None, 10, 1500]
+WARNING:tensorflow:From ./AFN.py:124: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From /data/slc/anaconda3/envs/tf1/lib/python3.7/site-packages/tensorflow/python/ops/losses/losses_impl.py:514: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+WARNING:tensorflow:From /data/slc/anaconda3/envs/tf1/lib/python3.7/site-packages/tensorflow/python/ops/metrics_impl.py:788: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+WARNING:tensorflow:From /data/slc/anaconda3/envs/tf1/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+INFO:tensorflow:Summary name h_lr_emb:0 is illegal; using h_lr_emb_0 instead.
+INFO:tensorflow:Summary name h_lr_emb_deep:0 is illegal; using h_lr_emb_deep_0 instead.
+INFO:tensorflow:Summary name fm_w:0 is illegal; using fm_w_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/beta:0 is illegal; using Permutation-Layer/bn_log/beta_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/gamma:0 is illegal; using Permutation-Layer/bn_log/gamma_0 instead.
+INFO:tensorflow:Summary name Layer-1/h_lr_weights:0 is illegal; using Layer-1/h_lr_weights_0 instead.
+INFO:tensorflow:Summary name Layer-1/biases:0 is illegal; using Layer-1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/beta:0 is illegal; using Prediction/bn_inter/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/gamma:0 is illegal; using Prediction/bn_inter/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/weights:0 is illegal; using Prediction/Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/biases:0 is illegal; using Prediction/Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/beta:0 is illegal; using Prediction/Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/gamma:0 is illegal; using Prediction/Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/weights:0 is illegal; using Prediction/Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/biases:0 is illegal; using Prediction/Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/beta:0 is illegal; using Prediction/Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/gamma:0 is illegal; using Prediction/Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/weights:0 is illegal; using Prediction/Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/biases:0 is illegal; using Prediction/Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/beta:0 is illegal; using Prediction/Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/gamma:0 is illegal; using Prediction/Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/weights:0 is illegal; using Prediction/Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/biases:0 is illegal; using Prediction/Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Create CheckpointSaverHook.
+INFO:tensorflow:Graph was finalized.
+2022-02-14 18:45:08.327354: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2022-02-14 18:45:08.356716: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2400000000 Hz
+2022-02-14 18:45:08.359614: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x555559c41e50 executing computations on platform Host. Devices:
+2022-02-14 18:45:08.359681: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2022-02-14 18:45:08.500836: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce RTX 2080 Ti major: 7 minor: 5 memoryClockRate(GHz): 1.545
+pciBusID: 0000:86:00.0
+totalMemory: 10.76GiB freeMemory: 9.47GiB
+2022-02-14 18:45:08.500891: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2022-02-14 18:45:08.501877: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-02-14 18:45:08.501887: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2022-02-14 18:45:08.501893: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2022-02-14 18:45:08.501979: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 9213 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2080 Ti, pci bus id: 0000:86:00.0, compute capability: 7.5)
+2022-02-14 18:45:08.504569: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55555a5773b0 executing computations on platform CUDA. Devices:
+2022-02-14 18:45:08.504598: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce RTX 2080 Ti, Compute Capability 7.5
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Saving checkpoints for 0 into ./checkpoint/criteo/20220213/model.ckpt.
+2022-02-14 18:45:17.365298: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.0 locally
+2022-02-14 18:45:27.890382: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:101] Filling up shuffle buffer (this may take a while): 410746 of 500000
+2022-02-14 18:45:30.304638: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:140] Shuffle buffer filled.
+INFO:tensorflow:loss = 0.89236724, step = 0
+INFO:tensorflow:global_step/sec: 6.73935
+INFO:tensorflow:loss = 0.48175964, step = 100 (14.839 sec)
+INFO:tensorflow:global_step/sec: 10.7105
+INFO:tensorflow:loss = 0.4873425, step = 200 (9.335 sec)
+INFO:tensorflow:global_step/sec: 9.34204
+INFO:tensorflow:loss = 0.46839273, step = 300 (10.705 sec)
+INFO:tensorflow:global_step/sec: 9.00773
+INFO:tensorflow:loss = 0.4674906, step = 400 (11.102 sec)
+INFO:tensorflow:global_step/sec: 8.88442
+INFO:tensorflow:loss = 0.47727147, step = 500 (11.256 sec)
+INFO:tensorflow:global_step/sec: 9.15046
+INFO:tensorflow:loss = 0.4771423, step = 600 (10.928 sec)
+INFO:tensorflow:global_step/sec: 10.1714
+INFO:tensorflow:loss = 0.46532333, step = 700 (9.830 sec)
+INFO:tensorflow:global_step/sec: 9.81234
+INFO:tensorflow:loss = 0.44706044, step = 800 (10.191 sec)
+INFO:tensorflow:global_step/sec: 8.90159
+INFO:tensorflow:loss = 0.46321368, step = 900 (11.235 sec)
+INFO:tensorflow:global_step/sec: 9.0459
+INFO:tensorflow:loss = 0.43896487, step = 1000 (11.054 sec)
+INFO:tensorflow:global_step/sec: 9.04451
+INFO:tensorflow:loss = 0.45538425, step = 1100 (11.057 sec)
+INFO:tensorflow:global_step/sec: 9.46968
+INFO:tensorflow:loss = 0.47584516, step = 1200 (10.559 sec)
+INFO:tensorflow:global_step/sec: 10.5634
+INFO:tensorflow:loss = 0.45009533, step = 1300 (9.467 sec)
+INFO:tensorflow:global_step/sec: 9.38426
+INFO:tensorflow:loss = 0.45627072, step = 1400 (10.657 sec)
+INFO:tensorflow:global_step/sec: 9.17424
+INFO:tensorflow:loss = 0.45354494, step = 1500 (10.900 sec)
+INFO:tensorflow:global_step/sec: 9.05546
+INFO:tensorflow:loss = 0.46465203, step = 1600 (11.042 sec)
+INFO:tensorflow:global_step/sec: 9.14675
+INFO:tensorflow:loss = 0.46120623, step = 1700 (10.934 sec)
+INFO:tensorflow:global_step/sec: 10.1937
+INFO:tensorflow:loss = 0.44989607, step = 1800 (9.808 sec)
+INFO:tensorflow:global_step/sec: 9.89756
+INFO:tensorflow:loss = 0.45943657, step = 1900 (10.106 sec)
+INFO:tensorflow:global_step/sec: 8.69147
+INFO:tensorflow:loss = 0.44535238, step = 2000 (11.504 sec)
+INFO:tensorflow:global_step/sec: 8.82997
+INFO:tensorflow:loss = 0.45649704, step = 2100 (11.326 sec)
+INFO:tensorflow:global_step/sec: 8.95443
+INFO:tensorflow:loss = 0.44656947, step = 2200 (11.167 sec)
+INFO:tensorflow:global_step/sec: 9.37427
+INFO:tensorflow:loss = 0.45245874, step = 2300 (10.667 sec)
+INFO:tensorflow:global_step/sec: 10.509
+INFO:tensorflow:loss = 0.4612559, step = 2400 (9.516 sec)
+INFO:tensorflow:global_step/sec: 10.7065
+INFO:tensorflow:loss = 0.44656432, step = 2500 (9.340 sec)
+INFO:tensorflow:global_step/sec: 10.5019
+INFO:tensorflow:loss = 0.48104694, step = 2600 (9.522 sec)
+INFO:tensorflow:global_step/sec: 11.2737
+INFO:tensorflow:loss = 0.45696646, step = 2700 (8.870 sec)
+INFO:tensorflow:global_step/sec: 11.4583
+INFO:tensorflow:loss = 0.4551136, step = 2800 (8.727 sec)
+INFO:tensorflow:global_step/sec: 11.4488
+INFO:tensorflow:loss = 0.43608844, step = 2900 (8.735 sec)
+INFO:tensorflow:global_step/sec: 10.8646
+INFO:tensorflow:loss = 0.46112105, step = 3000 (9.206 sec)
+INFO:tensorflow:global_step/sec: 8.12583
+INFO:tensorflow:loss = 0.44467372, step = 3100 (12.306 sec)
+INFO:tensorflow:global_step/sec: 8.20835
+INFO:tensorflow:loss = 0.4496536, step = 3200 (12.181 sec)
+INFO:tensorflow:global_step/sec: 9.53457
+INFO:tensorflow:loss = 0.43841776, step = 3300 (10.488 sec)
+INFO:tensorflow:global_step/sec: 10.7553
+INFO:tensorflow:loss = 0.45935082, step = 3400 (9.298 sec)
+INFO:tensorflow:global_step/sec: 9.36191
+INFO:tensorflow:loss = 0.45777416, step = 3500 (10.684 sec)
+INFO:tensorflow:global_step/sec: 7.82207
+INFO:tensorflow:loss = 0.44202325, step = 3600 (12.782 sec)
+INFO:tensorflow:global_step/sec: 8.41392
+INFO:tensorflow:loss = 0.45707223, step = 3700 (11.885 sec)
+INFO:tensorflow:global_step/sec: 10.8761
+INFO:tensorflow:loss = 0.44112682, step = 3800 (9.196 sec)
+INFO:tensorflow:global_step/sec: 10.3087
+INFO:tensorflow:loss = 0.45753008, step = 3900 (9.700 sec)
+INFO:tensorflow:global_step/sec: 8.24718
+INFO:tensorflow:loss = 0.45231146, step = 4000 (12.126 sec)
+INFO:tensorflow:global_step/sec: 8.28774
+INFO:tensorflow:loss = 0.4405489, step = 4100 (12.066 sec)
+INFO:tensorflow:global_step/sec: 9.41609
+INFO:tensorflow:loss = 0.4509616, step = 4200 (10.618 sec)
+INFO:tensorflow:global_step/sec: 10.3242
+INFO:tensorflow:loss = 0.44334504, step = 4300 (9.687 sec)
+INFO:tensorflow:global_step/sec: 8.32852
+INFO:tensorflow:loss = 0.453219, step = 4400 (12.007 sec)
+INFO:tensorflow:global_step/sec: 8.20534
+INFO:tensorflow:loss = 0.44232672, step = 4500 (12.189 sec)
+INFO:tensorflow:global_step/sec: 8.75788
+INFO:tensorflow:loss = 0.4345541, step = 4600 (11.417 sec)
+INFO:tensorflow:global_step/sec: 10.8356
+INFO:tensorflow:loss = 0.44939747, step = 4700 (9.228 sec)
+INFO:tensorflow:global_step/sec: 10.8
+INFO:tensorflow:loss = 0.4455597, step = 4800 (9.260 sec)
+INFO:tensorflow:global_step/sec: 10.7693
+INFO:tensorflow:loss = 0.4700073, step = 4900 (9.285 sec)
+INFO:tensorflow:global_step/sec: 11.4918
+INFO:tensorflow:loss = 0.4436238, step = 5000 (8.702 sec)
+INFO:tensorflow:global_step/sec: 11.4549
+INFO:tensorflow:loss = 0.43795258, step = 5100 (8.730 sec)
+INFO:tensorflow:global_step/sec: 11.9084
+INFO:tensorflow:loss = 0.45006913, step = 5200 (8.398 sec)
+INFO:tensorflow:global_step/sec: 9.56444
+INFO:tensorflow:loss = 0.44178987, step = 5300 (10.457 sec)
+INFO:tensorflow:global_step/sec: 7.88556
+INFO:tensorflow:loss = 0.43727386, step = 5400 (12.680 sec)
+INFO:tensorflow:global_step/sec: 8.28585
+INFO:tensorflow:loss = 0.44161257, step = 5500 (12.069 sec)
+INFO:tensorflow:global_step/sec: 11.0342
+INFO:tensorflow:loss = 0.44900244, step = 5600 (9.063 sec)
+INFO:tensorflow:global_step/sec: 9.11328
+INFO:tensorflow:loss = 0.42444715, step = 5700 (10.974 sec)
+INFO:tensorflow:global_step/sec: 7.99349
+INFO:tensorflow:loss = 0.47066468, step = 5800 (12.509 sec)
+INFO:tensorflow:global_step/sec: 8.32657
+INFO:tensorflow:loss = 0.4455345, step = 5900 (12.010 sec)
+INFO:tensorflow:global_step/sec: 10.9968
+INFO:tensorflow:loss = 0.44444877, step = 6000 (9.094 sec)
+INFO:tensorflow:global_step/sec: 8.51591
+INFO:tensorflow:loss = 0.4471509, step = 6100 (11.743 sec)
+INFO:tensorflow:global_step/sec: 8.00314
+INFO:tensorflow:loss = 0.4479335, step = 6200 (12.497 sec)
+INFO:tensorflow:global_step/sec: 8.93837
+INFO:tensorflow:loss = 0.44504085, step = 6300 (11.186 sec)
+INFO:tensorflow:global_step/sec: 10.8666
+INFO:tensorflow:loss = 0.46284822, step = 6400 (9.202 sec)
+INFO:tensorflow:global_step/sec: 8.31455
+INFO:tensorflow:loss = 0.45451277, step = 6500 (12.029 sec)
+INFO:tensorflow:global_step/sec: 8.07866
+INFO:tensorflow:loss = 0.4300964, step = 6600 (12.377 sec)
+INFO:tensorflow:global_step/sec: 9.30875
+INFO:tensorflow:loss = 0.44113535, step = 6700 (10.743 sec)
+INFO:tensorflow:global_step/sec: 10.8043
+INFO:tensorflow:loss = 0.44508016, step = 6800 (9.256 sec)
+INFO:tensorflow:global_step/sec: 8.85387
+INFO:tensorflow:loss = 0.4546314, step = 6900 (11.295 sec)
+INFO:tensorflow:global_step/sec: 8.09958
+INFO:tensorflow:loss = 0.44535974, step = 7000 (12.345 sec)
+INFO:tensorflow:global_step/sec: 8.76103
+INFO:tensorflow:loss = 0.43652475, step = 7100 (11.414 sec)
+INFO:tensorflow:global_step/sec: 11.2099
+INFO:tensorflow:loss = 0.44102335, step = 7200 (8.921 sec)
+INFO:tensorflow:global_step/sec: 9.254
+INFO:tensorflow:loss = 0.45037526, step = 7300 (10.806 sec)
+INFO:tensorflow:global_step/sec: 8.14893
+INFO:tensorflow:loss = 0.4473645, step = 7400 (12.271 sec)
+INFO:tensorflow:global_step/sec: 8.5007
+INFO:tensorflow:loss = 0.47494912, step = 7500 (11.764 sec)
+INFO:tensorflow:global_step/sec: 11.3544
+INFO:tensorflow:loss = 0.45752722, step = 7600 (8.807 sec)
+INFO:tensorflow:global_step/sec: 10.9687
+INFO:tensorflow:loss = 0.45541367, step = 7700 (9.117 sec)
+INFO:tensorflow:global_step/sec: 10.9304
+INFO:tensorflow:loss = 0.44961476, step = 7800 (9.149 sec)
+INFO:tensorflow:global_step/sec: 11.1729
+INFO:tensorflow:loss = 0.45048338, step = 7900 (8.950 sec)
+INFO:tensorflow:global_step/sec: 9.59154
+INFO:tensorflow:loss = 0.43995255, step = 8000 (10.426 sec)
+INFO:tensorflow:Saving checkpoints for 8058 into ./checkpoint/criteo/20220213/model.ckpt.
+Parsing ['../data/criteo/valid.libsvm']
+INFO:tensorflow:Calling model_fn.
+shape of embeddings: [None, 39, 10]
+[None, 10, 1500]
+INFO:tensorflow:Summary name h_lr_emb:0 is illegal; using h_lr_emb_0 instead.
+INFO:tensorflow:Summary name h_lr_emb_deep:0 is illegal; using h_lr_emb_deep_0 instead.
+INFO:tensorflow:Summary name fm_w:0 is illegal; using fm_w_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/beta:0 is illegal; using Permutation-Layer/bn_log/beta_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/gamma:0 is illegal; using Permutation-Layer/bn_log/gamma_0 instead.
+INFO:tensorflow:Summary name Layer-1/h_lr_weights:0 is illegal; using Layer-1/h_lr_weights_0 instead.
+INFO:tensorflow:Summary name Layer-1/biases:0 is illegal; using Layer-1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/beta:0 is illegal; using Prediction/bn_inter/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/gamma:0 is illegal; using Prediction/bn_inter/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/weights:0 is illegal; using Prediction/Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/biases:0 is illegal; using Prediction/Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/beta:0 is illegal; using Prediction/Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/gamma:0 is illegal; using Prediction/Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/weights:0 is illegal; using Prediction/Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/biases:0 is illegal; using Prediction/Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/beta:0 is illegal; using Prediction/Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/gamma:0 is illegal; using Prediction/Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/weights:0 is illegal; using Prediction/Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/biases:0 is illegal; using Prediction/Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/beta:0 is illegal; using Prediction/Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/gamma:0 is illegal; using Prediction/Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/weights:0 is illegal; using Prediction/Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/biases:0 is illegal; using Prediction/Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2022-02-14T10:59:49Z
+INFO:tensorflow:Graph was finalized.
+2022-02-14 18:59:49.973704: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2022-02-14 18:59:49.973759: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-02-14 18:59:49.973766: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2022-02-14 18:59:49.973771: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2022-02-14 18:59:49.973871: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 9213 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2080 Ti, pci bus id: 0000:86:00.0, compute capability: 7.5)
+WARNING:tensorflow:From /data/slc/anaconda3/envs/tf1/lib/python3.7/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+INFO:tensorflow:Restoring parameters from ./checkpoint/criteo/20220213/model.ckpt-8058
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Finished evaluation at 2022-02-14-11:03:29
+INFO:tensorflow:Saving dict for global step 8058: auc = 0.8031012, global_step = 8058, logloss = 0.44817424, loss = 0.4481744, stop_criterion = 0.35492694
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 8058: ./checkpoint/criteo/20220213/model.ckpt-8058
+WARNING:tensorflow:From /data/slc/anaconda3/envs/tf1/lib/python3.7/site-packages/tensorflow/python/summary/summary_iterator.py:68: tf_record_iterator (from tensorflow.python.lib.io.tf_record) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use eager execution and: 
+`tf.data.TFRecordDataset(path)`
+INFO:tensorflow:global_step/sec: 0.432005
+INFO:tensorflow:loss = 0.4330991, step = 8100 (231.485 sec)
+INFO:tensorflow:global_step/sec: 10.7081
+INFO:tensorflow:loss = 0.4473897, step = 8200 (9.340 sec)
+INFO:tensorflow:global_step/sec: 11.2673
+INFO:tensorflow:loss = 0.44184586, step = 8300 (8.876 sec)
+INFO:tensorflow:global_step/sec: 11.0021
+INFO:tensorflow:loss = 0.4339968, step = 8400 (9.089 sec)
+INFO:tensorflow:global_step/sec: 11.2258
+INFO:tensorflow:loss = 0.4317941, step = 8500 (8.908 sec)
+INFO:tensorflow:global_step/sec: 11.1423
+INFO:tensorflow:loss = 0.44610652, step = 8600 (8.976 sec)
+INFO:tensorflow:global_step/sec: 11.3112
+INFO:tensorflow:loss = 0.438404, step = 8700 (8.840 sec)
+INFO:tensorflow:global_step/sec: 11.3343
+INFO:tensorflow:loss = 0.45187864, step = 8800 (8.823 sec)
+INFO:tensorflow:global_step/sec: 11.3362
+INFO:tensorflow:loss = 0.42653432, step = 8900 (8.822 sec)
+INFO:tensorflow:global_step/sec: 11.6159
+INFO:tensorflow:loss = 0.42266077, step = 9000 (8.609 sec)
+INFO:tensorflow:global_step/sec: 11.2275
+INFO:tensorflow:loss = 0.44625688, step = 9100 (8.907 sec)
+INFO:tensorflow:global_step/sec: 11.3517
+INFO:tensorflow:loss = 0.42916295, step = 9200 (8.807 sec)
+INFO:tensorflow:global_step/sec: 11.3674
+INFO:tensorflow:loss = 0.4464163, step = 9300 (8.798 sec)
+INFO:tensorflow:global_step/sec: 11.4921
+INFO:tensorflow:loss = 0.42678505, step = 9400 (8.702 sec)
+INFO:tensorflow:global_step/sec: 11.4193
+INFO:tensorflow:loss = 0.44178903, step = 9500 (8.757 sec)
+INFO:tensorflow:global_step/sec: 11.4384
+INFO:tensorflow:loss = 0.4521075, step = 9600 (8.742 sec)
+INFO:tensorflow:global_step/sec: 11.3016
+INFO:tensorflow:loss = 0.43691114, step = 9700 (8.849 sec)
+INFO:tensorflow:global_step/sec: 11.302
+INFO:tensorflow:loss = 0.4306721, step = 9800 (8.847 sec)
+INFO:tensorflow:global_step/sec: 11.3135
+INFO:tensorflow:loss = 0.4418323, step = 9900 (8.839 sec)
+INFO:tensorflow:global_step/sec: 11.6289
+INFO:tensorflow:loss = 0.44143677, step = 10000 (8.599 sec)
+INFO:tensorflow:global_step/sec: 11.6643
+INFO:tensorflow:loss = 0.44756514, step = 10100 (8.573 sec)
+INFO:tensorflow:global_step/sec: 11.0607
+INFO:tensorflow:loss = 0.4557145, step = 10200 (9.041 sec)
+INFO:tensorflow:global_step/sec: 11.4513
+INFO:tensorflow:loss = 0.45335266, step = 10300 (8.732 sec)
+INFO:tensorflow:global_step/sec: 11.4748
+INFO:tensorflow:loss = 0.43268728, step = 10400 (8.715 sec)
+INFO:tensorflow:global_step/sec: 11.3867
+INFO:tensorflow:loss = 0.4395594, step = 10500 (8.782 sec)
+INFO:tensorflow:global_step/sec: 11.4525
+INFO:tensorflow:loss = 0.45540732, step = 10600 (8.733 sec)
+INFO:tensorflow:global_step/sec: 11.5388
+INFO:tensorflow:loss = 0.42543948, step = 10700 (8.667 sec)
+INFO:tensorflow:global_step/sec: 11.7137
+INFO:tensorflow:loss = 0.45930144, step = 10800 (8.537 sec)
+INFO:tensorflow:global_step/sec: 11.0493
+INFO:tensorflow:loss = 0.4330894, step = 10900 (9.050 sec)
+INFO:tensorflow:global_step/sec: 11.5473
+INFO:tensorflow:loss = 0.4562238, step = 11000 (8.661 sec)
+INFO:tensorflow:global_step/sec: 11.3668
+INFO:tensorflow:loss = 0.43513277, step = 11100 (8.797 sec)
+INFO:tensorflow:global_step/sec: 11.5779
+INFO:tensorflow:loss = 0.43357307, step = 11200 (8.637 sec)
+INFO:tensorflow:global_step/sec: 11.6116
+INFO:tensorflow:loss = 0.4492373, step = 11300 (8.612 sec)
+INFO:tensorflow:global_step/sec: 11.4286
+INFO:tensorflow:loss = 0.42900655, step = 11400 (8.751 sec)
+INFO:tensorflow:global_step/sec: 11.4841
+INFO:tensorflow:loss = 0.43561894, step = 11500 (8.707 sec)
+INFO:tensorflow:global_step/sec: 11.6191
+INFO:tensorflow:loss = 0.44790173, step = 11600 (8.607 sec)
+INFO:tensorflow:global_step/sec: 11.3898
+INFO:tensorflow:loss = 0.43542376, step = 11700 (8.780 sec)
+INFO:tensorflow:global_step/sec: 11.6159
+INFO:tensorflow:loss = 0.42868838, step = 11800 (8.608 sec)
+INFO:tensorflow:global_step/sec: 11.7349
+INFO:tensorflow:loss = 0.43971834, step = 11900 (8.522 sec)
+INFO:tensorflow:global_step/sec: 11.6401
+INFO:tensorflow:loss = 0.44473657, step = 12000 (8.598 sec)
+INFO:tensorflow:global_step/sec: 11.1822
+INFO:tensorflow:loss = 0.44759232, step = 12100 (8.936 sec)
+INFO:tensorflow:global_step/sec: 11.0835
+INFO:tensorflow:loss = 0.4404493, step = 12200 (9.022 sec)
+INFO:tensorflow:global_step/sec: 11.0391
+INFO:tensorflow:loss = 0.44149035, step = 12300 (9.060 sec)
+INFO:tensorflow:global_step/sec: 11.4575
+INFO:tensorflow:loss = 0.43242654, step = 12400 (8.728 sec)
+INFO:tensorflow:global_step/sec: 11.4876
+INFO:tensorflow:loss = 0.43174398, step = 12500 (8.705 sec)
+INFO:tensorflow:global_step/sec: 11.4765
+INFO:tensorflow:loss = 0.43852115, step = 12600 (8.713 sec)
+INFO:tensorflow:global_step/sec: 11.2757
+INFO:tensorflow:loss = 0.4354046, step = 12700 (8.869 sec)
+INFO:tensorflow:global_step/sec: 11.2675
+INFO:tensorflow:loss = 0.44245595, step = 12800 (8.874 sec)
+INFO:tensorflow:global_step/sec: 11.28
+INFO:tensorflow:loss = 0.43618032, step = 12900 (8.866 sec)
+INFO:tensorflow:global_step/sec: 11.5833
+INFO:tensorflow:loss = 0.43701357, step = 13000 (8.632 sec)
+INFO:tensorflow:global_step/sec: 11.4441
+INFO:tensorflow:loss = 0.4342059, step = 13100 (8.739 sec)
+INFO:tensorflow:global_step/sec: 11.5599
+INFO:tensorflow:loss = 0.45150974, step = 13200 (8.650 sec)
+INFO:tensorflow:global_step/sec: 11.3169
+INFO:tensorflow:loss = 0.46076402, step = 13300 (8.837 sec)
+INFO:tensorflow:global_step/sec: 11.6658
+INFO:tensorflow:loss = 0.44309396, step = 13400 (8.571 sec)
+INFO:tensorflow:global_step/sec: 11.6923
+INFO:tensorflow:loss = 0.44789916, step = 13500 (8.553 sec)
+INFO:tensorflow:global_step/sec: 11.449
+INFO:tensorflow:loss = 0.44131428, step = 13600 (8.734 sec)
+INFO:tensorflow:global_step/sec: 11.2351
+INFO:tensorflow:loss = 0.43684536, step = 13700 (8.901 sec)
+INFO:tensorflow:global_step/sec: 11.5014
+INFO:tensorflow:loss = 0.42222407, step = 13800 (8.695 sec)
+INFO:tensorflow:global_step/sec: 11.4383
+INFO:tensorflow:loss = 0.4393389, step = 13900 (8.743 sec)
+INFO:tensorflow:global_step/sec: 11.2667
+INFO:tensorflow:loss = 0.44212514, step = 14000 (8.875 sec)
+INFO:tensorflow:global_step/sec: 11.4227
+INFO:tensorflow:loss = 0.44359675, step = 14100 (8.756 sec)
+INFO:tensorflow:global_step/sec: 11.2449
+INFO:tensorflow:loss = 0.43735924, step = 14200 (8.893 sec)
+INFO:tensorflow:global_step/sec: 11.4577
+INFO:tensorflow:loss = 0.42999786, step = 14300 (8.728 sec)
+INFO:tensorflow:global_step/sec: 11.7092
+INFO:tensorflow:loss = 0.43833065, step = 14400 (8.540 sec)
+INFO:tensorflow:global_step/sec: 11.5707
+INFO:tensorflow:loss = 0.4344179, step = 14500 (8.643 sec)
+INFO:tensorflow:global_step/sec: 11.485
+INFO:tensorflow:loss = 0.4485372, step = 14600 (8.707 sec)
+INFO:tensorflow:global_step/sec: 11.4154
+INFO:tensorflow:loss = 0.42751518, step = 14700 (8.760 sec)
+INFO:tensorflow:global_step/sec: 11.4664
+INFO:tensorflow:loss = 0.44095525, step = 14800 (8.720 sec)
+INFO:tensorflow:global_step/sec: 11.6715
+INFO:tensorflow:loss = 0.4149357, step = 14900 (8.568 sec)
+INFO:tensorflow:global_step/sec: 12.011
+INFO:tensorflow:loss = 0.4190595, step = 15000 (8.326 sec)
+INFO:tensorflow:global_step/sec: 11.7465
+INFO:tensorflow:loss = 0.44458947, step = 15100 (8.513 sec)
+INFO:tensorflow:global_step/sec: 11.4601
+INFO:tensorflow:loss = 0.43985742, step = 15200 (8.726 sec)
+INFO:tensorflow:global_step/sec: 11.5365
+INFO:tensorflow:loss = 0.44891354, step = 15300 (8.668 sec)
+INFO:tensorflow:global_step/sec: 11.7344
+INFO:tensorflow:loss = 0.44194508, step = 15400 (8.522 sec)
+INFO:tensorflow:global_step/sec: 11.8781
+INFO:tensorflow:loss = 0.45081794, step = 15500 (8.419 sec)
+INFO:tensorflow:global_step/sec: 11.6413
+INFO:tensorflow:loss = 0.42678154, step = 15600 (8.590 sec)
+INFO:tensorflow:global_step/sec: 11.7775
+INFO:tensorflow:loss = 0.43218425, step = 15700 (8.491 sec)
+INFO:tensorflow:global_step/sec: 11.987
+INFO:tensorflow:loss = 0.43738818, step = 15800 (8.342 sec)
+INFO:tensorflow:global_step/sec: 11.5254
+INFO:tensorflow:loss = 0.42658597, step = 15900 (8.677 sec)
+INFO:tensorflow:global_step/sec: 10.564
+INFO:tensorflow:loss = 0.43373197, step = 16000 (9.466 sec)
+INFO:tensorflow:global_step/sec: 10.5196
+INFO:tensorflow:loss = 0.42662886, step = 16100 (9.507 sec)
+INFO:tensorflow:Saving checkpoints for 16116 into ./checkpoint/criteo/20220213/model.ckpt.
+Parsing ['../data/criteo/valid.libsvm']
+INFO:tensorflow:Calling model_fn.
+shape of embeddings: [None, 39, 10]
+[None, 10, 1500]
+INFO:tensorflow:Summary name h_lr_emb:0 is illegal; using h_lr_emb_0 instead.
+INFO:tensorflow:Summary name h_lr_emb_deep:0 is illegal; using h_lr_emb_deep_0 instead.
+INFO:tensorflow:Summary name fm_w:0 is illegal; using fm_w_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/beta:0 is illegal; using Permutation-Layer/bn_log/beta_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/gamma:0 is illegal; using Permutation-Layer/bn_log/gamma_0 instead.
+INFO:tensorflow:Summary name Layer-1/h_lr_weights:0 is illegal; using Layer-1/h_lr_weights_0 instead.
+INFO:tensorflow:Summary name Layer-1/biases:0 is illegal; using Layer-1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/beta:0 is illegal; using Prediction/bn_inter/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/gamma:0 is illegal; using Prediction/bn_inter/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/weights:0 is illegal; using Prediction/Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/biases:0 is illegal; using Prediction/Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/beta:0 is illegal; using Prediction/Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/gamma:0 is illegal; using Prediction/Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/weights:0 is illegal; using Prediction/Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/biases:0 is illegal; using Prediction/Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/beta:0 is illegal; using Prediction/Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/gamma:0 is illegal; using Prediction/Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/weights:0 is illegal; using Prediction/Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/biases:0 is illegal; using Prediction/Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/beta:0 is illegal; using Prediction/Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/gamma:0 is illegal; using Prediction/Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/weights:0 is illegal; using Prediction/Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/biases:0 is illegal; using Prediction/Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2022-02-14T11:15:18Z
+INFO:tensorflow:Graph was finalized.
+2022-02-14 19:15:18.459836: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2022-02-14 19:15:18.459902: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-02-14 19:15:18.459911: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2022-02-14 19:15:18.459918: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2022-02-14 19:15:18.460049: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 9213 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2080 Ti, pci bus id: 0000:86:00.0, compute capability: 7.5)
+INFO:tensorflow:Restoring parameters from ./checkpoint/criteo/20220213/model.ckpt-16116
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Finished evaluation at 2022-02-14-11:18:53
+INFO:tensorflow:Saving dict for global step 16116: auc = 0.8062956, global_step = 16116, logloss = 0.44529882, loss = 0.44533375, stop_criterion = 0.36099675
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 16116: ./checkpoint/criteo/20220213/model.ckpt-16116
+INFO:tensorflow:global_step/sec: 0.439625
+INFO:tensorflow:loss = 0.43029478, step = 16200 (227.465 sec)
+INFO:tensorflow:global_step/sec: 11.37
+INFO:tensorflow:loss = 0.41753843, step = 16300 (8.796 sec)
+INFO:tensorflow:global_step/sec: 11.6
+INFO:tensorflow:loss = 0.42923722, step = 16400 (8.620 sec)
+INFO:tensorflow:global_step/sec: 11.3609
+INFO:tensorflow:loss = 0.43415517, step = 16500 (8.803 sec)
+INFO:tensorflow:global_step/sec: 11.153
+INFO:tensorflow:loss = 0.44313625, step = 16600 (8.967 sec)
+INFO:tensorflow:global_step/sec: 11.5087
+INFO:tensorflow:loss = 0.42076302, step = 16700 (8.689 sec)
+INFO:tensorflow:global_step/sec: 11.3793
+INFO:tensorflow:loss = 0.4357869, step = 16800 (8.788 sec)
+INFO:tensorflow:global_step/sec: 11.7182
+INFO:tensorflow:loss = 0.45060965, step = 16900 (8.534 sec)
+INFO:tensorflow:global_step/sec: 11.5682
+INFO:tensorflow:loss = 0.4307552, step = 17000 (8.643 sec)
+INFO:tensorflow:global_step/sec: 11.3003
+INFO:tensorflow:loss = 0.41880846, step = 17100 (8.850 sec)
+INFO:tensorflow:global_step/sec: 10.9823
+INFO:tensorflow:loss = 0.42616048, step = 17200 (9.105 sec)
+INFO:tensorflow:global_step/sec: 11.0804
+INFO:tensorflow:loss = 0.43795377, step = 17300 (9.025 sec)
+INFO:tensorflow:global_step/sec: 11.0443
+INFO:tensorflow:loss = 0.42492518, step = 17400 (9.055 sec)
+INFO:tensorflow:global_step/sec: 11.5239
+INFO:tensorflow:loss = 0.4317627, step = 17500 (8.677 sec)
+INFO:tensorflow:global_step/sec: 11.6354
+INFO:tensorflow:loss = 0.42543975, step = 17600 (8.594 sec)
+INFO:tensorflow:global_step/sec: 11.252
+INFO:tensorflow:loss = 0.42019764, step = 17700 (8.887 sec)
+INFO:tensorflow:global_step/sec: 11.4266
+INFO:tensorflow:loss = 0.42576775, step = 17800 (8.752 sec)
+INFO:tensorflow:global_step/sec: 11.2068
+INFO:tensorflow:loss = 0.43093047, step = 17900 (8.923 sec)
+INFO:tensorflow:global_step/sec: 11.6612
+INFO:tensorflow:loss = 0.439327, step = 18000 (8.575 sec)
+INFO:tensorflow:global_step/sec: 11.5624
+INFO:tensorflow:loss = 0.42169327, step = 18100 (8.649 sec)
+INFO:tensorflow:global_step/sec: 11.3098
+INFO:tensorflow:loss = 0.42988524, step = 18200 (8.842 sec)
+INFO:tensorflow:global_step/sec: 11.3996
+INFO:tensorflow:loss = 0.42287654, step = 18300 (8.772 sec)
+INFO:tensorflow:global_step/sec: 11.4893
+INFO:tensorflow:loss = 0.4414668, step = 18400 (8.705 sec)
+INFO:tensorflow:global_step/sec: 11.6079
+INFO:tensorflow:loss = 0.4378266, step = 18500 (8.614 sec)
+INFO:tensorflow:global_step/sec: 11.4812
+INFO:tensorflow:loss = 0.4309108, step = 18600 (8.710 sec)
+INFO:tensorflow:global_step/sec: 11.3732
+INFO:tensorflow:loss = 0.43812957, step = 18700 (8.793 sec)
+INFO:tensorflow:global_step/sec: 11.1951
+INFO:tensorflow:loss = 0.4168693, step = 18800 (8.931 sec)
+INFO:tensorflow:global_step/sec: 11.324
+INFO:tensorflow:loss = 0.42622882, step = 18900 (8.831 sec)
+INFO:tensorflow:global_step/sec: 11.2811
+INFO:tensorflow:loss = 0.42004117, step = 19000 (8.865 sec)
+INFO:tensorflow:global_step/sec: 11.6476
+INFO:tensorflow:loss = 0.43788755, step = 19100 (8.585 sec)
+INFO:tensorflow:global_step/sec: 11.316
+INFO:tensorflow:loss = 0.42806697, step = 19200 (8.837 sec)
+INFO:tensorflow:global_step/sec: 11.4751
+INFO:tensorflow:loss = 0.41594383, step = 19300 (8.715 sec)
+INFO:tensorflow:global_step/sec: 11.41
+INFO:tensorflow:loss = 0.41454703, step = 19400 (8.765 sec)
+INFO:tensorflow:global_step/sec: 11.4568
+INFO:tensorflow:loss = 0.43595064, step = 19500 (8.728 sec)
+INFO:tensorflow:global_step/sec: 11.0321
+INFO:tensorflow:loss = 0.42295742, step = 19600 (9.066 sec)
+INFO:tensorflow:global_step/sec: 11.6899
+INFO:tensorflow:loss = 0.4155654, step = 19700 (8.554 sec)
+INFO:tensorflow:global_step/sec: 11.5235
+INFO:tensorflow:loss = 0.41654354, step = 19800 (8.677 sec)
+INFO:tensorflow:global_step/sec: 11.4241
+INFO:tensorflow:loss = 0.4164469, step = 19900 (8.754 sec)
+INFO:tensorflow:global_step/sec: 11.3689
+INFO:tensorflow:loss = 0.4212666, step = 20000 (8.796 sec)
+INFO:tensorflow:global_step/sec: 11.2705
+INFO:tensorflow:loss = 0.439152, step = 20100 (8.873 sec)
+INFO:tensorflow:global_step/sec: 11.2384
+INFO:tensorflow:loss = 0.43779528, step = 20200 (8.898 sec)
+INFO:tensorflow:global_step/sec: 11.3823
+INFO:tensorflow:loss = 0.43229777, step = 20300 (8.786 sec)
+INFO:tensorflow:global_step/sec: 11.5243
+INFO:tensorflow:loss = 0.4240141, step = 20400 (8.676 sec)
+INFO:tensorflow:global_step/sec: 11.4278
+INFO:tensorflow:loss = 0.4163529, step = 20500 (8.751 sec)
+INFO:tensorflow:global_step/sec: 11.7706
+INFO:tensorflow:loss = 0.42859715, step = 20600 (8.496 sec)
+INFO:tensorflow:global_step/sec: 11.2235
+INFO:tensorflow:loss = 0.4129947, step = 20700 (8.910 sec)
+INFO:tensorflow:global_step/sec: 11.1147
+INFO:tensorflow:loss = 0.42930225, step = 20800 (8.997 sec)
+INFO:tensorflow:global_step/sec: 11.286
+INFO:tensorflow:loss = 0.43599695, step = 20900 (8.860 sec)
+INFO:tensorflow:global_step/sec: 10.8631
+INFO:tensorflow:loss = 0.42487228, step = 21000 (9.206 sec)
+INFO:tensorflow:global_step/sec: 11.3173
+INFO:tensorflow:loss = 0.44843328, step = 21100 (8.836 sec)
+INFO:tensorflow:global_step/sec: 11.5522
+INFO:tensorflow:loss = 0.43659118, step = 21200 (8.657 sec)
+INFO:tensorflow:global_step/sec: 11.1324
+INFO:tensorflow:loss = 0.42306995, step = 21300 (8.983 sec)
+INFO:tensorflow:global_step/sec: 11.0663
+INFO:tensorflow:loss = 0.43874595, step = 21400 (9.036 sec)
+INFO:tensorflow:global_step/sec: 11.2021
+INFO:tensorflow:loss = 0.43925127, step = 21500 (8.926 sec)
+INFO:tensorflow:global_step/sec: 11.4632
+INFO:tensorflow:loss = 0.43496293, step = 21600 (8.725 sec)
+INFO:tensorflow:global_step/sec: 11.6853
+INFO:tensorflow:loss = 0.4295978, step = 21700 (8.557 sec)
+INFO:tensorflow:global_step/sec: 11.4349
+INFO:tensorflow:loss = 0.4311415, step = 21800 (8.745 sec)
+INFO:tensorflow:global_step/sec: 11.5095
+INFO:tensorflow:loss = 0.4256591, step = 21900 (8.689 sec)
+INFO:tensorflow:global_step/sec: 11.3305
+INFO:tensorflow:loss = 0.4335624, step = 22000 (8.825 sec)
+INFO:tensorflow:global_step/sec: 11.3998
+INFO:tensorflow:loss = 0.43561724, step = 22100 (8.773 sec)
+INFO:tensorflow:global_step/sec: 11.2524
+INFO:tensorflow:loss = 0.43514505, step = 22200 (8.887 sec)
+INFO:tensorflow:global_step/sec: 11.263
+INFO:tensorflow:loss = 0.42816505, step = 22300 (8.879 sec)
+INFO:tensorflow:global_step/sec: 11.3363
+INFO:tensorflow:loss = 0.42085853, step = 22400 (8.821 sec)
+INFO:tensorflow:global_step/sec: 11.5582
+INFO:tensorflow:loss = 0.41908905, step = 22500 (8.652 sec)
+INFO:tensorflow:global_step/sec: 11.5671
+INFO:tensorflow:loss = 0.43105522, step = 22600 (8.645 sec)
+INFO:tensorflow:global_step/sec: 11.3394
+INFO:tensorflow:loss = 0.41807154, step = 22700 (8.819 sec)
+INFO:tensorflow:global_step/sec: 11.2209
+INFO:tensorflow:loss = 0.42529023, step = 22800 (8.912 sec)
+INFO:tensorflow:global_step/sec: 10.7928
+INFO:tensorflow:loss = 0.42911267, step = 22900 (9.265 sec)
+INFO:tensorflow:global_step/sec: 11.0597
+INFO:tensorflow:loss = 0.39278677, step = 23000 (9.043 sec)
+INFO:tensorflow:global_step/sec: 11.5998
+INFO:tensorflow:loss = 0.44074118, step = 23100 (8.619 sec)
+INFO:tensorflow:global_step/sec: 11.7048
+INFO:tensorflow:loss = 0.45016563, step = 23200 (8.544 sec)
+INFO:tensorflow:global_step/sec: 11.4743
+INFO:tensorflow:loss = 0.430213, step = 23300 (8.716 sec)
+INFO:tensorflow:global_step/sec: 11.2776
+INFO:tensorflow:loss = 0.43173832, step = 23400 (8.867 sec)
+INFO:tensorflow:global_step/sec: 11.3955
+INFO:tensorflow:loss = 0.42352912, step = 23500 (8.776 sec)
+INFO:tensorflow:global_step/sec: 11.2149
+INFO:tensorflow:loss = 0.43047616, step = 23600 (8.916 sec)
+INFO:tensorflow:global_step/sec: 11.3858
+INFO:tensorflow:loss = 0.4240853, step = 23700 (8.783 sec)
+INFO:tensorflow:global_step/sec: 11.228
+INFO:tensorflow:loss = 0.4388061, step = 23800 (8.906 sec)
+INFO:tensorflow:global_step/sec: 11.2673
+INFO:tensorflow:loss = 0.43954417, step = 23900 (8.875 sec)
+INFO:tensorflow:global_step/sec: 11.011
+INFO:tensorflow:loss = 0.42119542, step = 24000 (9.082 sec)
+INFO:tensorflow:global_step/sec: 9.58695
+INFO:tensorflow:loss = 0.4280091, step = 24100 (10.431 sec)
+INFO:tensorflow:Saving checkpoints for 24174 into ./checkpoint/criteo/20220213/model.ckpt.
+Parsing ['../data/criteo/valid.libsvm']
+INFO:tensorflow:Calling model_fn.
+shape of embeddings: [None, 39, 10]
+[None, 10, 1500]
+INFO:tensorflow:Summary name h_lr_emb:0 is illegal; using h_lr_emb_0 instead.
+INFO:tensorflow:Summary name h_lr_emb_deep:0 is illegal; using h_lr_emb_deep_0 instead.
+INFO:tensorflow:Summary name fm_w:0 is illegal; using fm_w_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/beta:0 is illegal; using Permutation-Layer/bn_log/beta_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/gamma:0 is illegal; using Permutation-Layer/bn_log/gamma_0 instead.
+INFO:tensorflow:Summary name Layer-1/h_lr_weights:0 is illegal; using Layer-1/h_lr_weights_0 instead.
+INFO:tensorflow:Summary name Layer-1/biases:0 is illegal; using Layer-1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/beta:0 is illegal; using Prediction/bn_inter/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/gamma:0 is illegal; using Prediction/bn_inter/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/weights:0 is illegal; using Prediction/Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/biases:0 is illegal; using Prediction/Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/beta:0 is illegal; using Prediction/Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/gamma:0 is illegal; using Prediction/Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/weights:0 is illegal; using Prediction/Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/biases:0 is illegal; using Prediction/Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/beta:0 is illegal; using Prediction/Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/gamma:0 is illegal; using Prediction/Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/weights:0 is illegal; using Prediction/Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/biases:0 is illegal; using Prediction/Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/beta:0 is illegal; using Prediction/Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/gamma:0 is illegal; using Prediction/Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/weights:0 is illegal; using Prediction/Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/biases:0 is illegal; using Prediction/Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2022-02-14T11:30:48Z
+INFO:tensorflow:Graph was finalized.
+2022-02-14 19:30:48.739085: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2022-02-14 19:30:48.739144: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-02-14 19:30:48.739152: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2022-02-14 19:30:48.739157: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2022-02-14 19:30:48.739265: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 9213 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2080 Ti, pci bus id: 0000:86:00.0, compute capability: 7.5)
+INFO:tensorflow:Restoring parameters from ./checkpoint/criteo/20220213/model.ckpt-24174
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Finished evaluation at 2022-02-14-11:34:25
+INFO:tensorflow:Saving dict for global step 24174: auc = 0.80197704, global_step = 24174, logloss = 0.45116442, loss = 0.45116475, stop_criterion = 0.3508126
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 24174: ./checkpoint/criteo/20220213/model.ckpt-24174
+INFO:tensorflow:No increase in metric "stop_criterion" for 8058 steps, which is greater than or equal to max steps (8057) configured for early stopping.
+INFO:tensorflow:Requesting early stopping at global step 24180
+INFO:tensorflow:Saving checkpoints for 24181 into ./checkpoint/criteo/20220213/model.ckpt.
+Parsing ['../data/criteo/valid.libsvm']
+INFO:tensorflow:Calling model_fn.
+shape of embeddings: [None, 39, 10]
+[None, 10, 1500]
+INFO:tensorflow:Summary name h_lr_emb:0 is illegal; using h_lr_emb_0 instead.
+INFO:tensorflow:Summary name h_lr_emb_deep:0 is illegal; using h_lr_emb_deep_0 instead.
+INFO:tensorflow:Summary name fm_w:0 is illegal; using fm_w_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/beta:0 is illegal; using Permutation-Layer/bn_log/beta_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/gamma:0 is illegal; using Permutation-Layer/bn_log/gamma_0 instead.
+INFO:tensorflow:Summary name Layer-1/h_lr_weights:0 is illegal; using Layer-1/h_lr_weights_0 instead.
+INFO:tensorflow:Summary name Layer-1/biases:0 is illegal; using Layer-1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/beta:0 is illegal; using Prediction/bn_inter/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/gamma:0 is illegal; using Prediction/bn_inter/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/weights:0 is illegal; using Prediction/Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/biases:0 is illegal; using Prediction/Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/beta:0 is illegal; using Prediction/Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/gamma:0 is illegal; using Prediction/Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/weights:0 is illegal; using Prediction/Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/biases:0 is illegal; using Prediction/Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/beta:0 is illegal; using Prediction/Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/gamma:0 is illegal; using Prediction/Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/weights:0 is illegal; using Prediction/Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/biases:0 is illegal; using Prediction/Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/beta:0 is illegal; using Prediction/Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/gamma:0 is illegal; using Prediction/Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/weights:0 is illegal; using Prediction/Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/biases:0 is illegal; using Prediction/Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2022-02-14T11:34:27Z
+INFO:tensorflow:Graph was finalized.
+2022-02-14 19:34:28.170877: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2022-02-14 19:34:28.170934: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-02-14 19:34:28.170940: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2022-02-14 19:34:28.170945: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2022-02-14 19:34:28.171035: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 9213 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2080 Ti, pci bus id: 0000:86:00.0, compute capability: 7.5)
+INFO:tensorflow:Restoring parameters from ./checkpoint/criteo/20220213/model.ckpt-24181
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Finished evaluation at 2022-02-14-11:37:39
+INFO:tensorflow:Saving dict for global step 24181: auc = 0.8024862, global_step = 24181, logloss = 0.45176822, loss = 0.45176864, stop_criterion = 0.35071796
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 24181: ./checkpoint/criteo/20220213/model.ckpt-24181
+INFO:tensorflow:Loss for final step: 0.425808.
+Early stopped, start evaluation...
+Parsing ['../data/criteo/test.libsvm']
+INFO:tensorflow:Calling model_fn.
+shape of embeddings: [None, 39, 10]
+[None, 10, 1500]
+INFO:tensorflow:Summary name h_lr_emb:0 is illegal; using h_lr_emb_0 instead.
+INFO:tensorflow:Summary name h_lr_emb_deep:0 is illegal; using h_lr_emb_deep_0 instead.
+INFO:tensorflow:Summary name fm_w:0 is illegal; using fm_w_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/beta:0 is illegal; using Permutation-Layer/bn_log/beta_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/gamma:0 is illegal; using Permutation-Layer/bn_log/gamma_0 instead.
+INFO:tensorflow:Summary name Layer-1/h_lr_weights:0 is illegal; using Layer-1/h_lr_weights_0 instead.
+INFO:tensorflow:Summary name Layer-1/biases:0 is illegal; using Layer-1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/beta:0 is illegal; using Prediction/bn_inter/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/gamma:0 is illegal; using Prediction/bn_inter/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/weights:0 is illegal; using Prediction/Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/biases:0 is illegal; using Prediction/Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/beta:0 is illegal; using Prediction/Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/gamma:0 is illegal; using Prediction/Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/weights:0 is illegal; using Prediction/Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/biases:0 is illegal; using Prediction/Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/beta:0 is illegal; using Prediction/Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/gamma:0 is illegal; using Prediction/Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/weights:0 is illegal; using Prediction/Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/biases:0 is illegal; using Prediction/Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/beta:0 is illegal; using Prediction/Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/gamma:0 is illegal; using Prediction/Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/weights:0 is illegal; using Prediction/Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/biases:0 is illegal; using Prediction/Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2022-02-14T11:37:50Z
+INFO:tensorflow:Graph was finalized.
+2022-02-14 19:37:50.981751: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2022-02-14 19:37:50.981814: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-02-14 19:37:50.981821: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2022-02-14 19:37:50.981826: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2022-02-14 19:37:50.981910: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 9213 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2080 Ti, pci bus id: 0000:86:00.0, compute capability: 7.5)
+INFO:tensorflow:Restoring parameters from ./checkpoint/criteo/20220213/model.ckpt-16116
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Finished evaluation at 2022-02-14-11:39:26
+INFO:tensorflow:Saving dict for global step 16116: auc = 0.8066614, global_step = 16116, logloss = 0.4448477, loss = 0.44488174, stop_criterion = 0.36181372
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 16116: ./checkpoint/criteo/20220213/model.ckpt-16116

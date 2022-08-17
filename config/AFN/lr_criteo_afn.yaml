@@ -1,0 +1,15 @@
+base_config: ./config/AFN
+base_expid: AFN_Criteo
+dataset_id: Criteo
+
+dataset_config:
+    Criteo:
+        data_format: h5
+        data_root: './data/'
+        train_data: ./data/Criteo/train.h5
+        valid_data: ./data/Criteo/valid.h5
+        test_data: ./data/Criteo/test.h5
+
+tuner_space:
+    model_root: './checkpoints/'
+    learning_rate: [0.01,0.005,0.001,0.0005,0.0001]

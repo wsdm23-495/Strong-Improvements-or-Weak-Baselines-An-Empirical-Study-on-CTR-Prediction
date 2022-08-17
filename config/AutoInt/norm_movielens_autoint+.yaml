@@ -1,0 +1,16 @@
+base_config: ./config/AutoInt
+base_expid: AutoInt+_Movielens
+dataset_id: Movielens
+
+dataset_config:
+    Movielens:
+        data_format: h5
+        data_root: './data/'
+        train_data: ./data/Movielens/train.h5
+        valid_data: ./data/Movielens/valid.h5
+        test_data: ./data/Movielens/test.h5
+
+tuner_space:
+    model_root: './checkpoints/'
+    batch_norm: [ false, true ]
+    layer_norm: [ false, true]

@@ -1,0 +1,52 @@
+Criteo:
+    data_root: ./data/
+    data_format: csv
+    train_data: ./data/Criteo/train.csv
+    valid_data: ./data/Criteo/valid.csv
+    test_data: ./data/Criteo/test.csv
+    min_categr_count: 1
+    feature_cols:
+        - {name: ["I1", "I2", "I3", "I4", "I5", "I6", "I7", "I8", "I9", "I10", "I11", "I12", "I13"],
+           active: True, dtype: float, type: numeric}
+        - {name: ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10",
+                  "C11", "C12", "C13", "C14", "C15", "C16", "C17", "C18", "C19", "C20", "C21", "C22",
+                  "C23", "C24", "C25", "C26"], active: True, dtype: float, type: categorical}
+    label_col: {name: label, dtype: float}
+
+Avazu:
+    data_root: ./data/
+    data_format: csv
+    train_data: ./data/Avazu/train.csv
+    valid_data: ./data/Avazu/valid.csv
+    test_data: ./data/Avazu/test.csv
+    min_categr_count: 1
+    feature_cols:
+        - {name: ["feat_1", "feat_2", "feat_3", "feat_4", "feat_5", "feat_6", "feat_7", "feat_8", "feat_9", "feat_10",
+                  "feat_11", "feat_12", "feat_13", "feat_14", "feat_15", "feat_16", "feat_17", "feat_18", "feat_19",
+                  "feat_20", "feat_21", "feat_22"],
+           active: True, dtype: float, type: categorical}
+    label_col: {name: label, dtype: float}
+
+Frappe:
+    data_root: ./data/
+    data_format: csv
+    train_data: ./data/Frappe/train.csv
+    valid_data: ./data/Frappe/valid.csv
+    test_data: ./data/Frappe/test.csv
+    min_categr_count: 1
+    feature_cols:
+        - { name: ["user","item","daytime","weekday","isweekend","homework","cost","weather","country","city"],
+            active: True, dtype: float, type: categorical }
+    label_col: { name: label, dtype: float }
+
+Movielens:
+    data_root: ./data/
+    data_format: csv
+    train_data: ./data/Movielens/train.csv
+    valid_data: ./data/Movielens/valid.csv
+    test_data: ./data/Movielens/test.csv
+    min_categr_count: 1
+    feature_cols:
+        - { name: ["user_id","item_id","tag_id"],
+            active: True, dtype: float, type: categorical }
+    label_col: { name: label, dtype: float }

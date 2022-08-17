@@ -1,0 +1,201 @@
+Base:
+    model_root: './checkpoints/'
+    workers: 8
+    verbose: 1
+    patience: 2
+    pickle_feature_encoder: True
+    use_hdf5: True
+    save_best_only: True
+    every_x_epochs: 1
+    debug: False
+    version: 'pytorch'
+    
+AFN_Frappe:
+    afn_activations: relu
+    afn_dropout: 0
+    afn_hidden_units: [400, 400, 400]
+    batch_norm: false
+    batch_size: 4096
+    dataset_id: Frappe
+    dnn_activations: relu
+    dnn_dropout: 0.2
+    dnn_hidden_units: [400, 400, 400]
+    embedding_dim: 10
+    embedding_regularizer: 0.001
+    embedding_initializer: "torch.nn.init.normal_(std=1.0e-4)"
+    ensemble_dnn: false
+    epochs: 100
+    learning_rate: 0.001
+    logarithmic_neurons: 1200
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: AFN
+    model_id: AFN_base
+    monitor: {AUC: 1, logloss: -1}
+    monitor_mode: max
+    net_regularizer: 0
+    optimizer: adam
+    seed: 2021
+    shuffle: true
+    task: binary_classification
+
+
+AFN_Movielens:
+    afn_activations: relu
+    afn_dropout: 0.1
+    afn_hidden_units: [400, 400, 400]
+    batch_norm: false
+    batch_size: 4096
+    dataset_id: Movielens
+    dnn_activations: relu
+    dnn_dropout: 0.2
+    dnn_hidden_units: [400, 400, 400]
+    embedding_dim: 10
+    embedding_regularizer: 0.001
+    embedding_initializer: "torch.nn.init.normal_(std=1.0e-4)"
+    ensemble_dnn: false
+    epochs: 100
+    learning_rate: 0.001
+    logarithmic_neurons: 1500
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: AFN
+    model_id: AFN_base
+    monitor: {AUC: 1, logloss: -1}
+    monitor_mode: max
+    net_regularizer: 0
+    optimizer: adam
+    seed: 2021
+    shuffle: true
+    task: binary_classification
+
+AFN+_Frappe:
+    afn_activations: relu
+    afn_dropout: 0.3
+    afn_hidden_units: [400, 400, 400]
+    batch_norm: false
+    layer_norm: false
+    batch_size: 4096
+    dataset_id: Frappe
+    dnn_activations: relu
+    dnn_dropout: 0.1
+    dnn_hidden_units: [400, 400, 400]
+    embedding_dim: 10
+    embedding_regularizer: 0.001
+    embedding_initializer: "torch.nn.init.normal_(std=1.0e-4)"
+    ensemble_dnn: true
+    epochs: 100
+    learning_rate: 0.001
+    logarithmic_neurons: 1200
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: AFN
+    model_id: AFN_base
+    monitor: {AUC: 1, logloss: -1}
+    monitor_mode: max
+    net_regularizer: 0
+    optimizer: adam
+    seed: 2021
+    shuffle: true
+    task: binary_classification
+
+AFN+_Movielens:
+    afn_activations: relu
+    afn_dropout: 0.3
+    afn_hidden_units: [400, 400, 400]
+    batch_norm: false
+    layer_norm: false
+    batch_size: 4096
+    dataset_id: Movielens
+    dnn_activations: relu
+    dnn_dropout: 0.1
+    dnn_hidden_units: [400, 400, 400]
+    embedding_dim: 10
+    embedding_regularizer: 0.01
+    embedding_initializer: "torch.nn.init.normal_(std=1.0e-4)"
+    ensemble_dnn: true
+    epochs: 100
+    learning_rate: 0.001
+    logarithmic_neurons: 800
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: AFN
+    model_id: AFN_base
+    monitor: {AUC: 1, logloss: -1}
+    monitor_mode: max
+    net_regularizer: 0
+    optimizer: adam
+    seed: 2021
+    shuffle: true
+    task: binary_classification
+
+
+AFN_Criteo:
+    afn_activations: relu
+    afn_dropout: 0.4
+    afn_hidden_units: [800]
+    batch_norm: false
+    batch_size: 4096
+    dataset_id: Criteo
+    dnn_activations: relu
+    dnn_dropout: 0
+    dnn_hidden_units: []
+    embedding_dim: 10
+    embedding_regularizer: 1.0e-05
+    embedding_initializer: "torch.nn.init.normal_(std=1.0e-4)"
+    ensemble_dnn: false
+    epochs: 100
+    learning_rate: 0.001
+    logarithmic_neurons: 600
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: AFN
+    model_id: AFN_base
+    monitor: {AUC: 1, logloss: -1}
+    monitor_mode: max
+    net_regularizer: 0
+    optimizer: adam
+    seed: 2021
+    shuffle: true
+    task: binary_classification
+
+
+AFN+_Criteo:
+    afn_activations: relu
+    afn_dropout: 0
+    afn_hidden_units: [400,400,400]
+    batch_norm: True
+    batch_size: 4096
+    dataset_id: Criteo
+    debug: false
+    dnn_activations: relu
+    dnn_dropout: 0.1
+    dnn_hidden_units: [400, 400, 400]
+    embedding_dim: 10
+    embedding_initializer: torch.nn.init.normal_(std=1.0e-4)
+    embedding_regularizer: 0.001
+    ensemble_dnn: true
+    epochs: 100
+    every_x_epochs: 1
+    layer_norm: False
+    learning_rate: 0.001
+    logarithmic_neurons: 1500
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: AFN
+    model_id: AFN+_Criteo
+    model_root: ./checkpoints/
+    monitor: {AUC: 1, logloss: -1}
+    monitor_mode: max
+    net_regularizer: 0
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    save_best_only: true
+    seed: 2021
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+    version: pytorch
+    workers: 8

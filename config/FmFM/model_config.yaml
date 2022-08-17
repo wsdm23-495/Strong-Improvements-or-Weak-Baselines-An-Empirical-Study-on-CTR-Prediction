@@ -1,0 +1,48 @@
+Base:
+    model_root: './checkpoints/'
+    workers: 8
+    verbose: 1
+    patience: 2
+    pickle_feature_encoder: True
+    use_hdf5: True
+    save_best_only: True
+    every_x_epochs: 1
+    debug: False
+    version: 'pytorch'
+
+
+FmFM_Criteo:
+    model: FmFM
+    dataset_id: Criteo
+    loss: binary_crossentropy
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.0e-3
+    regularizer: 1e-06
+    batch_size: 4096
+    embedding_dim: 10
+    epochs: 100
+    shuffle: True
+    seed: 2021
+    field_interaction_type: matrixed
+    monitor: {'AUC': 1, 'logloss': -1}
+    monitor_mode: 'max'
+
+FmFM_Avazu:
+    model: FmFM
+    dataset_id: Avazu
+    loss: binary_crossentropy
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.0e-3
+    regularizer: 1.0e-05
+    batch_size: 4096
+    embedding_dim: 10
+    epochs: 100
+    shuffle: True
+    seed: 2021
+    field_interaction_type: matrixed
+    monitor: {'AUC': 1, 'logloss': -1}
+    monitor_mode: 'max'

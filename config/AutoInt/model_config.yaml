@@ -1,0 +1,263 @@
+Base:
+    model_root: './checkpoints/'
+    workers: 8
+    verbose: 1
+    patience: 2
+    pickle_feature_encoder: True
+    use_hdf5: True
+    save_best_only: True
+    every_x_epochs: 1
+    debug: False
+    version: 'pytorch'
+
+
+AutoInt+_Frappe:
+    attention_dim: 64
+    attention_layers: 4
+    batch_norm: false
+    dnn_layer_nrom: false
+    batch_size: 4096
+    dataset_id: Frappe
+    dnn_activations: relu
+    dnn_hidden_units: [400, 400, 400]
+    embedding_dim: 10
+    embedding_initializer: torch.nn.init.normal_(std=1.0e-4)
+    embedding_regularizer: 0.05
+    epochs: 100
+    layer_norm: false
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: AutoInt
+    model_id: AutoInt_base
+    monitor: {AUC: 1, logloss: -1}
+    monitor_mode: max
+    net_dropout: 0.1
+    net_regularizer: 0
+    num_heads: 3
+    optimizer: adam
+    seed: 2021
+    shuffle: true
+    task: binary_classification
+    use_residual: true
+    use_scale: false
+    use_wide: false
+
+AutoInt+_Movielens:
+    attention_dim: 64
+    attention_layers: 3
+    batch_norm: false
+    batch_size: 4096
+    dataset_id: Movielens
+    dnn_activations: relu
+    dnn_hidden_units: [400, 400, 400]
+    embedding_dim: 10
+    embedding_initializer: torch.nn.init.normal_(std=1.0e-4)
+    embedding_regularizer: 0.005
+    epochs: 100
+    layer_norm: false
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: AutoInt
+    model_id: AutoInt_base
+    monitor: {AUC: 1, logloss: -1}
+    monitor_mode: max
+    net_dropout: 0
+    net_regularizer: 0
+    num_heads: 1
+    optimizer: adam
+    seed: 2021
+    shuffle: true
+    task: binary_classification
+    use_residual: true
+    use_scale: false
+    use_wide: false
+
+AutoInt+_Criteo:
+    model: AutoInt
+    dataset_id: Criteo
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 1.0e-5
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 10
+    dnn_hidden_units: [400,400,400]
+    dnn_activations: relu
+    net_dropout: 0
+    num_heads: 1
+    attention_layers: 3
+    attention_dim: 128
+    use_residual: True
+    batch_norm: True
+    layer_norm: False
+    dnn_layer_norm: False
+    use_scale: False
+    use_wide: False
+    epochs: 100
+    shuffle: True
+    seed: 2021
+    monitor: {'AUC': 1, 'logloss': -1}
+    monitor_mode: 'max'
+    embedding_initializer: "torch.nn.init.normal_(std=1.0e-4)"
+
+AutoInt_Criteo:
+    model: AutoInt
+    dataset_id: Criteo
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 1.0e-5
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 10
+    dnn_hidden_units: []
+    dnn_activations: relu
+    net_dropout: 0
+    num_heads: 4
+    attention_layers: 6
+    attention_dim: 256
+    use_residual: True
+    batch_norm: False
+    layer_norm: False
+    dnn_layer_norm: False
+    use_scale: True
+    use_wide: True
+    epochs: 100
+    shuffle: True
+    seed: 2021
+    monitor: {'AUC': 1, 'logloss': -1}
+    monitor_mode: 'max'
+    embedding_initializer: "torch.nn.init.normal_(std=1.0e-4)"
+
+
+AutoInt+_Avazu:
+    model: AutoInt
+    dataset_id: Avazu
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 1.0e-5
+    net_regularizer: 0.01
+    batch_size: 4096
+    embedding_dim: 10
+    dnn_hidden_units: [400,400,400]
+    dnn_activations: relu
+    net_dropout: 0.1
+    num_heads: 2
+    attention_layers: 5
+    attention_dim: 64
+    use_residual: True
+    batch_norm: True
+    layer_norm: True
+    dnn_layer_norm: False
+    use_scale: True
+    use_wide: False
+    epochs: 100
+    shuffle: True
+    seed: 2021
+    monitor: {'AUC': 1, 'logloss': -1}
+    monitor_mode: 'max'
+    embedding_initializer: "torch.nn.init.normal_(std=1.0e-4)"
+
+AutoInt_Avazu:
+    model: AutoInt
+    dataset_id: Avazu
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 0.001
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 10
+    dnn_hidden_units: []
+    dnn_activations: relu
+    net_dropout: 0.1
+    num_heads: 4
+    attention_layers: 5
+    attention_dim: 32
+    use_residual: True
+    batch_norm: False
+    layer_norm: True
+    dnn_layer_norm: False
+    use_scale: False
+    use_wide: False
+    epochs: 100
+    shuffle: True
+    seed: 2021
+    monitor: {'AUC': 1, 'logloss': -1}
+    monitor_mode: 'max'
+    embedding_initializer: "torch.nn.init.normal_(std=1.0e-4)"
+
+AutoInt_Movielens:
+    attention_dim: 64
+    attention_layers: 5
+    batch_norm: false
+    batch_size: 4096
+    dataset_id: Movielens
+    dnn_activations: relu
+    dnn_hidden_units: null
+    embedding_dim: 10
+    embedding_initializer: torch.nn.init.normal_(std=1.0e-4)
+    embedding_regularizer: 0.005
+    epochs: 100
+    layer_norm: false
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: AutoInt
+    model_id: AutoInt_base
+    monitor: {AUC: 1, logloss: -1}
+    monitor_mode: max
+    net_dropout: 0
+    net_regularizer: 0
+    num_heads: 2
+    optimizer: adam
+    seed: 2021
+    shuffle: true
+    task: binary_classification
+    use_residual: true
+    use_scale: false
+    use_wide: false
+
+
+AutoInt_Frappe:
+    attention_dim: 64
+    attention_layers: 5
+    batch_norm: false
+    batch_size: 4096
+    dataset_id: Frappe
+    dnn_activations: relu
+    dnn_hidden_units: null
+    embedding_dim: 10
+    embedding_initializer: torch.nn.init.normal_(std=1.0e-4)
+    embedding_regularizer: 0.05
+    epochs: 100
+    layer_norm: false
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: AutoInt
+    model_id: AutoInt_base
+    monitor: {AUC: 1, logloss: -1}
+    monitor_mode: max
+    net_dropout: 0.1
+    net_regularizer: 0
+    num_heads: 1
+    optimizer: adam
+    seed: 2021
+    shuffle: true
+    task: binary_classification
+    use_residual: true
+    use_scale: false
+    use_wide: false

@@ -1,0 +1,16 @@
+base_config: ./config/AFN
+base_expid: AFN+_Movielens
+dataset_id: Movielens
+
+dataset_config:
+    Movielens:
+        data_format: h5
+        data_root: './data/'
+        train_data: ./data/Movielens/train.h5
+        valid_data: ./data/Movielens/valid.h5
+        test_data: ./data/Movielens/test.h5
+
+tuner_space:
+    model_root: './checkpoints/'
+    net_regularizer: [0,1.0e-1,1.0e-2,1.0e-3,1.0e-4,1.0e-5]
+    embedding_regularizer: [0,1.0e-1,1.0e-2,1.0e-3,1.0e-4,1.0e-5]

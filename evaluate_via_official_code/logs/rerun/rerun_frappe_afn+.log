@@ -1,0 +1,679 @@
+/data/slc/anaconda3/envs/tf1/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/data/slc/anaconda3/envs/tf1/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/data/slc/anaconda3/envs/tf1/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:528: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/data/slc/anaconda3/envs/tf1/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:529: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/data/slc/anaconda3/envs/tf1/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:530: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/data/slc/anaconda3/envs/tf1/lib/python3.7/site-packages/tensorflow/python/framework/dtypes.py:535: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+task_type  train
+model_dir  ./checkpoint/frappe/20220213
+data_dir  ../data/frappe/
+dt_dir  20220213
+feature_size  5500
+field_size  10
+embedding_size  10
+batch_size  4096
+deep_layers  400,400,400
+dropout  1.,1.,1.
+optimizer  Adam
+learning_rate  0.001
+batch_norm_decay  0.9
+batch_norm  True
+ensemble  True
+tr_files: ['../data/frappe/train.libsvm']
+va_files: ['../data/frappe/valid.libsvm']
+te_files: ['../data/frappe/test.libsvm']
+existing model cleaned at ./checkpoint/frappe/20220213
+INFO:tensorflow:Using config: {'_model_dir': './checkpoint/frappe/20220213', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': 50, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+  allow_growth: true
+}
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7fff2173a050>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+
+WARNING: The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+If you depend on functionality not listed there, please file an issue.
+
+INFO:tensorflow:Not using Distribute Coordinator.
+INFO:tensorflow:Running training and evaluation locally (non-distributed).
+INFO:tensorflow:Start train and evaluate loop. The evaluate will happen after every checkpoint. Checkpoint frequency is determined based on RunConfig arguments: save_checkpoints_steps 50 or save_checkpoints_secs None.
+WARNING:tensorflow:From /data/slc/anaconda3/envs/tf1/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Parsing ['../data/frappe/train.libsvm']
+INFO:tensorflow:Calling model_fn.
+shape of embeddings: [None, 10, 10]
+[None, 10, 600]
+WARNING:tensorflow:From ./AFN.py:124: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From /data/slc/anaconda3/envs/tf1/lib/python3.7/site-packages/tensorflow/python/ops/losses/losses_impl.py:514: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+WARNING:tensorflow:From /data/slc/anaconda3/envs/tf1/lib/python3.7/site-packages/tensorflow/python/ops/metrics_impl.py:788: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+WARNING:tensorflow:From /data/slc/anaconda3/envs/tf1/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+INFO:tensorflow:Summary name h_lr_emb:0 is illegal; using h_lr_emb_0 instead.
+INFO:tensorflow:Summary name h_lr_emb_deep:0 is illegal; using h_lr_emb_deep_0 instead.
+INFO:tensorflow:Summary name fm_w:0 is illegal; using fm_w_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/beta:0 is illegal; using Permutation-Layer/bn_log/beta_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/gamma:0 is illegal; using Permutation-Layer/bn_log/gamma_0 instead.
+INFO:tensorflow:Summary name Layer-1/h_lr_weights:0 is illegal; using Layer-1/h_lr_weights_0 instead.
+INFO:tensorflow:Summary name Layer-1/biases:0 is illegal; using Layer-1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/beta:0 is illegal; using Prediction/bn_inter/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/gamma:0 is illegal; using Prediction/bn_inter/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/weights:0 is illegal; using Prediction/Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/biases:0 is illegal; using Prediction/Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/beta:0 is illegal; using Prediction/Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/gamma:0 is illegal; using Prediction/Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/weights:0 is illegal; using Prediction/Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/biases:0 is illegal; using Prediction/Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/beta:0 is illegal; using Prediction/Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/gamma:0 is illegal; using Prediction/Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/weights:0 is illegal; using Prediction/Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/biases:0 is illegal; using Prediction/Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/beta:0 is illegal; using Prediction/Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/gamma:0 is illegal; using Prediction/Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/weights:0 is illegal; using Prediction/Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/biases:0 is illegal; using Prediction/Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp0/weights:0 is illegal; using Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp0/biases:0 is illegal; using Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_0/beta:0 is illegal; using Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_0/gamma:0 is illegal; using Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp1/weights:0 is illegal; using Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp1/biases:0 is illegal; using Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_1/beta:0 is illegal; using Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_1/gamma:0 is illegal; using Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp2/weights:0 is illegal; using Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp2/biases:0 is illegal; using Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_2/beta:0 is illegal; using Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_2/gamma:0 is illegal; using Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/deep_out/weights:0 is illegal; using Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/deep_out/biases:0 is illegal; using Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Summary name w1:0 is illegal; using w1_0 instead.
+INFO:tensorflow:Summary name w2:0 is illegal; using w2_0 instead.
+INFO:tensorflow:Summary name b_p:0 is illegal; using b_p_0 instead.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Create CheckpointSaverHook.
+INFO:tensorflow:Graph was finalized.
+2022-02-14 20:02:41.589495: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2022-02-14 20:02:41.616657: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2400000000 Hz
+2022-02-14 20:02:41.618267: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x555559f26d10 executing computations on platform Host. Devices:
+2022-02-14 20:02:41.618308: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2022-02-14 20:02:41.732292: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce RTX 2080 Ti major: 7 minor: 5 memoryClockRate(GHz): 1.545
+pciBusID: 0000:86:00.0
+totalMemory: 10.76GiB freeMemory: 10.60GiB
+2022-02-14 20:02:41.732343: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2022-02-14 20:02:41.733374: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-02-14 20:02:41.733385: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2022-02-14 20:02:41.733391: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2022-02-14 20:02:41.733473: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10312 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2080 Ti, pci bus id: 0000:86:00.0, compute capability: 7.5)
+2022-02-14 20:02:41.735976: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55555a7b7d30 executing computations on platform CUDA. Devices:
+2022-02-14 20:02:41.736000: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce RTX 2080 Ti, Compute Capability 7.5
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Saving checkpoints for 0 into ./checkpoint/frappe/20220213/model.ckpt.
+2022-02-14 20:02:45.144849: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.0 locally
+2022-02-14 20:02:55.473191: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:101] Filling up shuffle buffer (this may take a while): 423696 of 500000
+2022-02-14 20:02:57.329107: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:140] Shuffle buffer filled.
+INFO:tensorflow:loss = 2.6297388, step = 0
+INFO:tensorflow:Saving checkpoints for 50 into ./checkpoint/frappe/20220213/model.ckpt.
+Parsing ['../data/frappe/valid.libsvm']
+INFO:tensorflow:Calling model_fn.
+shape of embeddings: [None, 10, 10]
+[None, 10, 600]
+INFO:tensorflow:Summary name h_lr_emb:0 is illegal; using h_lr_emb_0 instead.
+INFO:tensorflow:Summary name h_lr_emb_deep:0 is illegal; using h_lr_emb_deep_0 instead.
+INFO:tensorflow:Summary name fm_w:0 is illegal; using fm_w_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/beta:0 is illegal; using Permutation-Layer/bn_log/beta_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/gamma:0 is illegal; using Permutation-Layer/bn_log/gamma_0 instead.
+INFO:tensorflow:Summary name Layer-1/h_lr_weights:0 is illegal; using Layer-1/h_lr_weights_0 instead.
+INFO:tensorflow:Summary name Layer-1/biases:0 is illegal; using Layer-1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/beta:0 is illegal; using Prediction/bn_inter/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/gamma:0 is illegal; using Prediction/bn_inter/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/weights:0 is illegal; using Prediction/Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/biases:0 is illegal; using Prediction/Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/beta:0 is illegal; using Prediction/Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/gamma:0 is illegal; using Prediction/Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/weights:0 is illegal; using Prediction/Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/biases:0 is illegal; using Prediction/Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/beta:0 is illegal; using Prediction/Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/gamma:0 is illegal; using Prediction/Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/weights:0 is illegal; using Prediction/Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/biases:0 is illegal; using Prediction/Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/beta:0 is illegal; using Prediction/Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/gamma:0 is illegal; using Prediction/Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/weights:0 is illegal; using Prediction/Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/biases:0 is illegal; using Prediction/Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp0/weights:0 is illegal; using Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp0/biases:0 is illegal; using Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_0/beta:0 is illegal; using Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_0/gamma:0 is illegal; using Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp1/weights:0 is illegal; using Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp1/biases:0 is illegal; using Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_1/beta:0 is illegal; using Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_1/gamma:0 is illegal; using Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp2/weights:0 is illegal; using Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp2/biases:0 is illegal; using Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_2/beta:0 is illegal; using Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_2/gamma:0 is illegal; using Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/deep_out/weights:0 is illegal; using Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/deep_out/biases:0 is illegal; using Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Summary name w1:0 is illegal; using w1_0 instead.
+INFO:tensorflow:Summary name w2:0 is illegal; using w2_0 instead.
+INFO:tensorflow:Summary name b_p:0 is illegal; using b_p_0 instead.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2022-02-14T12:03:06Z
+INFO:tensorflow:Graph was finalized.
+2022-02-14 20:03:06.778860: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2022-02-14 20:03:06.778914: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-02-14 20:03:06.778920: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2022-02-14 20:03:06.778926: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2022-02-14 20:03:06.779015: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10312 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2080 Ti, pci bus id: 0000:86:00.0, compute capability: 7.5)
+WARNING:tensorflow:From /data/slc/anaconda3/envs/tf1/lib/python3.7/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+INFO:tensorflow:Restoring parameters from ./checkpoint/frappe/20220213/model.ckpt-50
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Finished evaluation at 2022-02-14-12:03:09
+INFO:tensorflow:Saving dict for global step 50: auc = 0.9344274, global_step = 50, logloss = 0.29297563, loss = 1.0114653, stop_criterion = 0.6414517
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 50: ./checkpoint/frappe/20220213/model.ckpt-50
+WARNING:tensorflow:From /data/slc/anaconda3/envs/tf1/lib/python3.7/site-packages/tensorflow/python/summary/summary_iterator.py:68: tf_record_iterator (from tensorflow.python.lib.io.tf_record) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use eager execution and: 
+`tf.data.TFRecordDataset(path)`
+INFO:tensorflow:Saving checkpoints for 100 into ./checkpoint/frappe/20220213/model.ckpt.
+Parsing ['../data/frappe/valid.libsvm']
+INFO:tensorflow:Calling model_fn.
+shape of embeddings: [None, 10, 10]
+[None, 10, 600]
+INFO:tensorflow:Summary name h_lr_emb:0 is illegal; using h_lr_emb_0 instead.
+INFO:tensorflow:Summary name h_lr_emb_deep:0 is illegal; using h_lr_emb_deep_0 instead.
+INFO:tensorflow:Summary name fm_w:0 is illegal; using fm_w_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/beta:0 is illegal; using Permutation-Layer/bn_log/beta_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/gamma:0 is illegal; using Permutation-Layer/bn_log/gamma_0 instead.
+INFO:tensorflow:Summary name Layer-1/h_lr_weights:0 is illegal; using Layer-1/h_lr_weights_0 instead.
+INFO:tensorflow:Summary name Layer-1/biases:0 is illegal; using Layer-1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/beta:0 is illegal; using Prediction/bn_inter/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/gamma:0 is illegal; using Prediction/bn_inter/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/weights:0 is illegal; using Prediction/Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/biases:0 is illegal; using Prediction/Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/beta:0 is illegal; using Prediction/Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/gamma:0 is illegal; using Prediction/Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/weights:0 is illegal; using Prediction/Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/biases:0 is illegal; using Prediction/Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/beta:0 is illegal; using Prediction/Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/gamma:0 is illegal; using Prediction/Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/weights:0 is illegal; using Prediction/Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/biases:0 is illegal; using Prediction/Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/beta:0 is illegal; using Prediction/Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/gamma:0 is illegal; using Prediction/Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/weights:0 is illegal; using Prediction/Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/biases:0 is illegal; using Prediction/Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp0/weights:0 is illegal; using Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp0/biases:0 is illegal; using Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_0/beta:0 is illegal; using Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_0/gamma:0 is illegal; using Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp1/weights:0 is illegal; using Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp1/biases:0 is illegal; using Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_1/beta:0 is illegal; using Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_1/gamma:0 is illegal; using Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp2/weights:0 is illegal; using Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp2/biases:0 is illegal; using Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_2/beta:0 is illegal; using Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_2/gamma:0 is illegal; using Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/deep_out/weights:0 is illegal; using Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/deep_out/biases:0 is illegal; using Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Summary name w1:0 is illegal; using w1_0 instead.
+INFO:tensorflow:Summary name w2:0 is illegal; using w2_0 instead.
+INFO:tensorflow:Summary name b_p:0 is illegal; using b_p_0 instead.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2022-02-14T12:03:15Z
+INFO:tensorflow:Graph was finalized.
+2022-02-14 20:03:16.229828: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2022-02-14 20:03:16.229913: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-02-14 20:03:16.229921: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2022-02-14 20:03:16.229926: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2022-02-14 20:03:16.230032: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10312 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2080 Ti, pci bus id: 0000:86:00.0, compute capability: 7.5)
+INFO:tensorflow:Restoring parameters from ./checkpoint/frappe/20220213/model.ckpt-100
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Finished evaluation at 2022-02-14-12:03:18
+INFO:tensorflow:Saving dict for global step 100: auc = 0.95660126, global_step = 100, logloss = 0.23389772, loss = 0.7566083, stop_criterion = 0.7227036
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 100: ./checkpoint/frappe/20220213/model.ckpt-100
+INFO:tensorflow:global_step/sec: 5.1436
+INFO:tensorflow:loss = 0.65665966, step = 100 (19.453 sec)
+INFO:tensorflow:Saving checkpoints for 150 into ./checkpoint/frappe/20220213/model.ckpt.
+Parsing ['../data/frappe/valid.libsvm']
+INFO:tensorflow:Calling model_fn.
+shape of embeddings: [None, 10, 10]
+[None, 10, 600]
+INFO:tensorflow:Summary name h_lr_emb:0 is illegal; using h_lr_emb_0 instead.
+INFO:tensorflow:Summary name h_lr_emb_deep:0 is illegal; using h_lr_emb_deep_0 instead.
+INFO:tensorflow:Summary name fm_w:0 is illegal; using fm_w_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/beta:0 is illegal; using Permutation-Layer/bn_log/beta_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/gamma:0 is illegal; using Permutation-Layer/bn_log/gamma_0 instead.
+INFO:tensorflow:Summary name Layer-1/h_lr_weights:0 is illegal; using Layer-1/h_lr_weights_0 instead.
+INFO:tensorflow:Summary name Layer-1/biases:0 is illegal; using Layer-1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/beta:0 is illegal; using Prediction/bn_inter/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/gamma:0 is illegal; using Prediction/bn_inter/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/weights:0 is illegal; using Prediction/Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/biases:0 is illegal; using Prediction/Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/beta:0 is illegal; using Prediction/Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/gamma:0 is illegal; using Prediction/Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/weights:0 is illegal; using Prediction/Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/biases:0 is illegal; using Prediction/Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/beta:0 is illegal; using Prediction/Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/gamma:0 is illegal; using Prediction/Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/weights:0 is illegal; using Prediction/Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/biases:0 is illegal; using Prediction/Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/beta:0 is illegal; using Prediction/Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/gamma:0 is illegal; using Prediction/Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/weights:0 is illegal; using Prediction/Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/biases:0 is illegal; using Prediction/Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp0/weights:0 is illegal; using Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp0/biases:0 is illegal; using Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_0/beta:0 is illegal; using Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_0/gamma:0 is illegal; using Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp1/weights:0 is illegal; using Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp1/biases:0 is illegal; using Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_1/beta:0 is illegal; using Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_1/gamma:0 is illegal; using Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp2/weights:0 is illegal; using Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp2/biases:0 is illegal; using Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_2/beta:0 is illegal; using Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_2/gamma:0 is illegal; using Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/deep_out/weights:0 is illegal; using Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/deep_out/biases:0 is illegal; using Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Summary name w1:0 is illegal; using w1_0 instead.
+INFO:tensorflow:Summary name w2:0 is illegal; using w2_0 instead.
+INFO:tensorflow:Summary name b_p:0 is illegal; using b_p_0 instead.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2022-02-14T12:03:25Z
+INFO:tensorflow:Graph was finalized.
+2022-02-14 20:03:25.516675: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2022-02-14 20:03:25.516763: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-02-14 20:03:25.516770: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2022-02-14 20:03:25.516775: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2022-02-14 20:03:25.516891: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10312 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2080 Ti, pci bus id: 0000:86:00.0, compute capability: 7.5)
+INFO:tensorflow:Restoring parameters from ./checkpoint/frappe/20220213/model.ckpt-150
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Finished evaluation at 2022-02-14-12:03:27
+INFO:tensorflow:Saving dict for global step 150: auc = 0.9671773, global_step = 150, logloss = 0.20473312, loss = 0.67548686, stop_criterion = 0.76244414
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 150: ./checkpoint/frappe/20220213/model.ckpt-150
+INFO:tensorflow:Saving checkpoints for 200 into ./checkpoint/frappe/20220213/model.ckpt.
+Parsing ['../data/frappe/valid.libsvm']
+INFO:tensorflow:Calling model_fn.
+shape of embeddings: [None, 10, 10]
+[None, 10, 600]
+INFO:tensorflow:Summary name h_lr_emb:0 is illegal; using h_lr_emb_0 instead.
+INFO:tensorflow:Summary name h_lr_emb_deep:0 is illegal; using h_lr_emb_deep_0 instead.
+INFO:tensorflow:Summary name fm_w:0 is illegal; using fm_w_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/beta:0 is illegal; using Permutation-Layer/bn_log/beta_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/gamma:0 is illegal; using Permutation-Layer/bn_log/gamma_0 instead.
+INFO:tensorflow:Summary name Layer-1/h_lr_weights:0 is illegal; using Layer-1/h_lr_weights_0 instead.
+INFO:tensorflow:Summary name Layer-1/biases:0 is illegal; using Layer-1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/beta:0 is illegal; using Prediction/bn_inter/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/gamma:0 is illegal; using Prediction/bn_inter/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/weights:0 is illegal; using Prediction/Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/biases:0 is illegal; using Prediction/Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/beta:0 is illegal; using Prediction/Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/gamma:0 is illegal; using Prediction/Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/weights:0 is illegal; using Prediction/Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/biases:0 is illegal; using Prediction/Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/beta:0 is illegal; using Prediction/Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/gamma:0 is illegal; using Prediction/Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/weights:0 is illegal; using Prediction/Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/biases:0 is illegal; using Prediction/Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/beta:0 is illegal; using Prediction/Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/gamma:0 is illegal; using Prediction/Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/weights:0 is illegal; using Prediction/Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/biases:0 is illegal; using Prediction/Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp0/weights:0 is illegal; using Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp0/biases:0 is illegal; using Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_0/beta:0 is illegal; using Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_0/gamma:0 is illegal; using Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp1/weights:0 is illegal; using Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp1/biases:0 is illegal; using Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_1/beta:0 is illegal; using Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_1/gamma:0 is illegal; using Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp2/weights:0 is illegal; using Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp2/biases:0 is illegal; using Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_2/beta:0 is illegal; using Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_2/gamma:0 is illegal; using Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/deep_out/weights:0 is illegal; using Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/deep_out/biases:0 is illegal; using Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Summary name w1:0 is illegal; using w1_0 instead.
+INFO:tensorflow:Summary name w2:0 is illegal; using w2_0 instead.
+INFO:tensorflow:Summary name b_p:0 is illegal; using b_p_0 instead.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2022-02-14T12:03:34Z
+INFO:tensorflow:Graph was finalized.
+2022-02-14 20:03:34.777129: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2022-02-14 20:03:34.777193: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-02-14 20:03:34.777200: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2022-02-14 20:03:34.777205: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2022-02-14 20:03:34.777301: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10312 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2080 Ti, pci bus id: 0000:86:00.0, compute capability: 7.5)
+INFO:tensorflow:Restoring parameters from ./checkpoint/frappe/20220213/model.ckpt-200
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Finished evaluation at 2022-02-14-12:03:37
+INFO:tensorflow:Saving dict for global step 200: auc = 0.9719657, global_step = 200, logloss = 0.18830405, loss = 0.6280257, stop_criterion = 0.7836616
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 200: ./checkpoint/frappe/20220213/model.ckpt-200
+INFO:tensorflow:global_step/sec: 5.41267
+INFO:tensorflow:loss = 0.42783976, step = 200 (18.474 sec)
+INFO:tensorflow:Saving checkpoints for 250 into ./checkpoint/frappe/20220213/model.ckpt.
+WARNING:tensorflow:From /data/slc/anaconda3/envs/tf1/lib/python3.7/site-packages/tensorflow/python/training/saver.py:966: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+Parsing ['../data/frappe/valid.libsvm']
+INFO:tensorflow:Calling model_fn.
+shape of embeddings: [None, 10, 10]
+[None, 10, 600]
+INFO:tensorflow:Summary name h_lr_emb:0 is illegal; using h_lr_emb_0 instead.
+INFO:tensorflow:Summary name h_lr_emb_deep:0 is illegal; using h_lr_emb_deep_0 instead.
+INFO:tensorflow:Summary name fm_w:0 is illegal; using fm_w_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/beta:0 is illegal; using Permutation-Layer/bn_log/beta_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/gamma:0 is illegal; using Permutation-Layer/bn_log/gamma_0 instead.
+INFO:tensorflow:Summary name Layer-1/h_lr_weights:0 is illegal; using Layer-1/h_lr_weights_0 instead.
+INFO:tensorflow:Summary name Layer-1/biases:0 is illegal; using Layer-1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/beta:0 is illegal; using Prediction/bn_inter/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/gamma:0 is illegal; using Prediction/bn_inter/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/weights:0 is illegal; using Prediction/Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/biases:0 is illegal; using Prediction/Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/beta:0 is illegal; using Prediction/Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/gamma:0 is illegal; using Prediction/Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/weights:0 is illegal; using Prediction/Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/biases:0 is illegal; using Prediction/Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/beta:0 is illegal; using Prediction/Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/gamma:0 is illegal; using Prediction/Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/weights:0 is illegal; using Prediction/Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/biases:0 is illegal; using Prediction/Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/beta:0 is illegal; using Prediction/Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/gamma:0 is illegal; using Prediction/Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/weights:0 is illegal; using Prediction/Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/biases:0 is illegal; using Prediction/Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp0/weights:0 is illegal; using Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp0/biases:0 is illegal; using Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_0/beta:0 is illegal; using Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_0/gamma:0 is illegal; using Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp1/weights:0 is illegal; using Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp1/biases:0 is illegal; using Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_1/beta:0 is illegal; using Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_1/gamma:0 is illegal; using Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp2/weights:0 is illegal; using Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp2/biases:0 is illegal; using Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_2/beta:0 is illegal; using Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_2/gamma:0 is illegal; using Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/deep_out/weights:0 is illegal; using Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/deep_out/biases:0 is illegal; using Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Summary name w1:0 is illegal; using w1_0 instead.
+INFO:tensorflow:Summary name w2:0 is illegal; using w2_0 instead.
+INFO:tensorflow:Summary name b_p:0 is illegal; using b_p_0 instead.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2022-02-14T12:03:43Z
+INFO:tensorflow:Graph was finalized.
+2022-02-14 20:03:44.111466: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2022-02-14 20:03:44.111525: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-02-14 20:03:44.111532: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2022-02-14 20:03:44.111537: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2022-02-14 20:03:44.111646: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10312 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2080 Ti, pci bus id: 0000:86:00.0, compute capability: 7.5)
+INFO:tensorflow:Restoring parameters from ./checkpoint/frappe/20220213/model.ckpt-250
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Finished evaluation at 2022-02-14-12:03:46
+INFO:tensorflow:Saving dict for global step 250: auc = 0.9746858, global_step = 250, logloss = 0.17852828, loss = 0.6009852, stop_criterion = 0.7961575
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 250: ./checkpoint/frappe/20220213/model.ckpt-250
+INFO:tensorflow:Saving checkpoints for 300 into ./checkpoint/frappe/20220213/model.ckpt.
+Parsing ['../data/frappe/valid.libsvm']
+INFO:tensorflow:Calling model_fn.
+shape of embeddings: [None, 10, 10]
+[None, 10, 600]
+INFO:tensorflow:Summary name h_lr_emb:0 is illegal; using h_lr_emb_0 instead.
+INFO:tensorflow:Summary name h_lr_emb_deep:0 is illegal; using h_lr_emb_deep_0 instead.
+INFO:tensorflow:Summary name fm_w:0 is illegal; using fm_w_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/beta:0 is illegal; using Permutation-Layer/bn_log/beta_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/gamma:0 is illegal; using Permutation-Layer/bn_log/gamma_0 instead.
+INFO:tensorflow:Summary name Layer-1/h_lr_weights:0 is illegal; using Layer-1/h_lr_weights_0 instead.
+INFO:tensorflow:Summary name Layer-1/biases:0 is illegal; using Layer-1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/beta:0 is illegal; using Prediction/bn_inter/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/gamma:0 is illegal; using Prediction/bn_inter/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/weights:0 is illegal; using Prediction/Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/biases:0 is illegal; using Prediction/Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/beta:0 is illegal; using Prediction/Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/gamma:0 is illegal; using Prediction/Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/weights:0 is illegal; using Prediction/Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/biases:0 is illegal; using Prediction/Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/beta:0 is illegal; using Prediction/Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/gamma:0 is illegal; using Prediction/Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/weights:0 is illegal; using Prediction/Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/biases:0 is illegal; using Prediction/Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/beta:0 is illegal; using Prediction/Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/gamma:0 is illegal; using Prediction/Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/weights:0 is illegal; using Prediction/Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/biases:0 is illegal; using Prediction/Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp0/weights:0 is illegal; using Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp0/biases:0 is illegal; using Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_0/beta:0 is illegal; using Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_0/gamma:0 is illegal; using Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp1/weights:0 is illegal; using Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp1/biases:0 is illegal; using Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_1/beta:0 is illegal; using Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_1/gamma:0 is illegal; using Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp2/weights:0 is illegal; using Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp2/biases:0 is illegal; using Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_2/beta:0 is illegal; using Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_2/gamma:0 is illegal; using Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/deep_out/weights:0 is illegal; using Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/deep_out/biases:0 is illegal; using Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Summary name w1:0 is illegal; using w1_0 instead.
+INFO:tensorflow:Summary name w2:0 is illegal; using w2_0 instead.
+INFO:tensorflow:Summary name b_p:0 is illegal; using b_p_0 instead.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2022-02-14T12:03:53Z
+INFO:tensorflow:Graph was finalized.
+2022-02-14 20:03:53.428251: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2022-02-14 20:03:53.428303: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-02-14 20:03:53.428309: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2022-02-14 20:03:53.428314: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2022-02-14 20:03:53.428403: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10312 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2080 Ti, pci bus id: 0000:86:00.0, compute capability: 7.5)
+INFO:tensorflow:Restoring parameters from ./checkpoint/frappe/20220213/model.ckpt-300
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Finished evaluation at 2022-02-14-12:03:55
+INFO:tensorflow:Saving dict for global step 300: auc = 0.9766126, global_step = 300, logloss = 0.16950655, loss = 0.58242923, stop_criterion = 0.8071061
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 300: ./checkpoint/frappe/20220213/model.ckpt-300
+INFO:tensorflow:global_step/sec: 5.35474
+INFO:tensorflow:loss = 0.26845938, step = 300 (18.675 sec)
+INFO:tensorflow:Saving checkpoints for 350 into ./checkpoint/frappe/20220213/model.ckpt.
+Parsing ['../data/frappe/valid.libsvm']
+INFO:tensorflow:Calling model_fn.
+shape of embeddings: [None, 10, 10]
+[None, 10, 600]
+INFO:tensorflow:Summary name h_lr_emb:0 is illegal; using h_lr_emb_0 instead.
+INFO:tensorflow:Summary name h_lr_emb_deep:0 is illegal; using h_lr_emb_deep_0 instead.
+INFO:tensorflow:Summary name fm_w:0 is illegal; using fm_w_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/beta:0 is illegal; using Permutation-Layer/bn_log/beta_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/gamma:0 is illegal; using Permutation-Layer/bn_log/gamma_0 instead.
+INFO:tensorflow:Summary name Layer-1/h_lr_weights:0 is illegal; using Layer-1/h_lr_weights_0 instead.
+INFO:tensorflow:Summary name Layer-1/biases:0 is illegal; using Layer-1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/beta:0 is illegal; using Prediction/bn_inter/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/gamma:0 is illegal; using Prediction/bn_inter/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/weights:0 is illegal; using Prediction/Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/biases:0 is illegal; using Prediction/Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/beta:0 is illegal; using Prediction/Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/gamma:0 is illegal; using Prediction/Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/weights:0 is illegal; using Prediction/Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/biases:0 is illegal; using Prediction/Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/beta:0 is illegal; using Prediction/Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/gamma:0 is illegal; using Prediction/Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/weights:0 is illegal; using Prediction/Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/biases:0 is illegal; using Prediction/Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/beta:0 is illegal; using Prediction/Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/gamma:0 is illegal; using Prediction/Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/weights:0 is illegal; using Prediction/Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/biases:0 is illegal; using Prediction/Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp0/weights:0 is illegal; using Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp0/biases:0 is illegal; using Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_0/beta:0 is illegal; using Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_0/gamma:0 is illegal; using Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp1/weights:0 is illegal; using Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp1/biases:0 is illegal; using Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_1/beta:0 is illegal; using Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_1/gamma:0 is illegal; using Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp2/weights:0 is illegal; using Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp2/biases:0 is illegal; using Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_2/beta:0 is illegal; using Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_2/gamma:0 is illegal; using Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/deep_out/weights:0 is illegal; using Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/deep_out/biases:0 is illegal; using Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Summary name w1:0 is illegal; using w1_0 instead.
+INFO:tensorflow:Summary name w2:0 is illegal; using w2_0 instead.
+INFO:tensorflow:Summary name b_p:0 is illegal; using b_p_0 instead.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2022-02-14T12:04:02Z
+INFO:tensorflow:Graph was finalized.
+2022-02-14 20:04:02.692589: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2022-02-14 20:04:02.692641: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-02-14 20:04:02.692647: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2022-02-14 20:04:02.692653: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2022-02-14 20:04:02.692762: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10312 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2080 Ti, pci bus id: 0000:86:00.0, compute capability: 7.5)
+INFO:tensorflow:Restoring parameters from ./checkpoint/frappe/20220213/model.ckpt-350
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Finished evaluation at 2022-02-14-12:04:04
+INFO:tensorflow:Saving dict for global step 350: auc = 0.9766399, global_step = 350, logloss = 0.17282574, loss = 0.5857023, stop_criterion = 0.8038142
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 350: ./checkpoint/frappe/20220213/model.ckpt-350
+INFO:tensorflow:No increase in metric "stop_criterion" for 50 steps, which is greater than or equal to max steps (49) configured for early stopping.
+INFO:tensorflow:Requesting early stopping at global step 350
+INFO:tensorflow:Saving checkpoints for 351 into ./checkpoint/frappe/20220213/model.ckpt.
+Parsing ['../data/frappe/valid.libsvm']
+INFO:tensorflow:Calling model_fn.
+shape of embeddings: [None, 10, 10]
+[None, 10, 600]
+INFO:tensorflow:Summary name h_lr_emb:0 is illegal; using h_lr_emb_0 instead.
+INFO:tensorflow:Summary name h_lr_emb_deep:0 is illegal; using h_lr_emb_deep_0 instead.
+INFO:tensorflow:Summary name fm_w:0 is illegal; using fm_w_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/beta:0 is illegal; using Permutation-Layer/bn_log/beta_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/gamma:0 is illegal; using Permutation-Layer/bn_log/gamma_0 instead.
+INFO:tensorflow:Summary name Layer-1/h_lr_weights:0 is illegal; using Layer-1/h_lr_weights_0 instead.
+INFO:tensorflow:Summary name Layer-1/biases:0 is illegal; using Layer-1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/beta:0 is illegal; using Prediction/bn_inter/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/gamma:0 is illegal; using Prediction/bn_inter/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/weights:0 is illegal; using Prediction/Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/biases:0 is illegal; using Prediction/Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/beta:0 is illegal; using Prediction/Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/gamma:0 is illegal; using Prediction/Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/weights:0 is illegal; using Prediction/Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/biases:0 is illegal; using Prediction/Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/beta:0 is illegal; using Prediction/Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/gamma:0 is illegal; using Prediction/Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/weights:0 is illegal; using Prediction/Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/biases:0 is illegal; using Prediction/Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/beta:0 is illegal; using Prediction/Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/gamma:0 is illegal; using Prediction/Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/weights:0 is illegal; using Prediction/Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/biases:0 is illegal; using Prediction/Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp0/weights:0 is illegal; using Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp0/biases:0 is illegal; using Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_0/beta:0 is illegal; using Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_0/gamma:0 is illegal; using Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp1/weights:0 is illegal; using Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp1/biases:0 is illegal; using Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_1/beta:0 is illegal; using Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_1/gamma:0 is illegal; using Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp2/weights:0 is illegal; using Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp2/biases:0 is illegal; using Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_2/beta:0 is illegal; using Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_2/gamma:0 is illegal; using Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/deep_out/weights:0 is illegal; using Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/deep_out/biases:0 is illegal; using Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Summary name w1:0 is illegal; using w1_0 instead.
+INFO:tensorflow:Summary name w2:0 is illegal; using w2_0 instead.
+INFO:tensorflow:Summary name b_p:0 is illegal; using b_p_0 instead.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2022-02-14T12:04:07Z
+INFO:tensorflow:Graph was finalized.
+2022-02-14 20:04:07.782895: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2022-02-14 20:04:07.782942: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-02-14 20:04:07.782949: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2022-02-14 20:04:07.782954: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2022-02-14 20:04:07.783036: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10312 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2080 Ti, pci bus id: 0000:86:00.0, compute capability: 7.5)
+INFO:tensorflow:Restoring parameters from ./checkpoint/frappe/20220213/model.ckpt-351
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Finished evaluation at 2022-02-14-12:04:10
+INFO:tensorflow:Saving dict for global step 351: auc = 0.9767621, global_step = 351, logloss = 0.1715923, loss = 0.58352405, stop_criterion = 0.8051698
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 351: ./checkpoint/frappe/20220213/model.ckpt-351
+INFO:tensorflow:Loss for final step: 0.24086173.
+Early stopped, start evaluation...
+Parsing ['../data/frappe/test.libsvm']
+INFO:tensorflow:Calling model_fn.
+shape of embeddings: [None, 10, 10]
+[None, 10, 600]
+INFO:tensorflow:Summary name h_lr_emb:0 is illegal; using h_lr_emb_0 instead.
+INFO:tensorflow:Summary name h_lr_emb_deep:0 is illegal; using h_lr_emb_deep_0 instead.
+INFO:tensorflow:Summary name fm_w:0 is illegal; using fm_w_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/beta:0 is illegal; using Permutation-Layer/bn_log/beta_0 instead.
+INFO:tensorflow:Summary name Permutation-Layer/bn_log/gamma:0 is illegal; using Permutation-Layer/bn_log/gamma_0 instead.
+INFO:tensorflow:Summary name Layer-1/h_lr_weights:0 is illegal; using Layer-1/h_lr_weights_0 instead.
+INFO:tensorflow:Summary name Layer-1/biases:0 is illegal; using Layer-1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/beta:0 is illegal; using Prediction/bn_inter/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/bn_inter/gamma:0 is illegal; using Prediction/bn_inter/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/weights:0 is illegal; using Prediction/Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp0/biases:0 is illegal; using Prediction/Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/beta:0 is illegal; using Prediction/Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_0/gamma:0 is illegal; using Prediction/Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/weights:0 is illegal; using Prediction/Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp1/biases:0 is illegal; using Prediction/Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/beta:0 is illegal; using Prediction/Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_1/gamma:0 is illegal; using Prediction/Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/weights:0 is illegal; using Prediction/Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/mlp2/biases:0 is illegal; using Prediction/Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/beta:0 is illegal; using Prediction/Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/bn_2/gamma:0 is illegal; using Prediction/Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/weights:0 is illegal; using Prediction/Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Prediction/Deep-part/deep_out/biases:0 is illegal; using Prediction/Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp0/weights:0 is illegal; using Deep-part/mlp0/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp0/biases:0 is illegal; using Deep-part/mlp0/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_0/beta:0 is illegal; using Deep-part/bn_0/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_0/gamma:0 is illegal; using Deep-part/bn_0/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp1/weights:0 is illegal; using Deep-part/mlp1/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp1/biases:0 is illegal; using Deep-part/mlp1/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_1/beta:0 is illegal; using Deep-part/bn_1/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_1/gamma:0 is illegal; using Deep-part/bn_1/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp2/weights:0 is illegal; using Deep-part/mlp2/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/mlp2/biases:0 is illegal; using Deep-part/mlp2/biases_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_2/beta:0 is illegal; using Deep-part/bn_2/beta_0 instead.
+INFO:tensorflow:Summary name Deep-part/bn_2/gamma:0 is illegal; using Deep-part/bn_2/gamma_0 instead.
+INFO:tensorflow:Summary name Deep-part/deep_out/weights:0 is illegal; using Deep-part/deep_out/weights_0 instead.
+INFO:tensorflow:Summary name Deep-part/deep_out/biases:0 is illegal; using Deep-part/deep_out/biases_0 instead.
+INFO:tensorflow:Summary name w1:0 is illegal; using w1_0 instead.
+INFO:tensorflow:Summary name w2:0 is illegal; using w2_0 instead.
+INFO:tensorflow:Summary name b_p:0 is illegal; using b_p_0 instead.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2022-02-14T12:04:12Z
+INFO:tensorflow:Graph was finalized.
+2022-02-14 20:04:13.302839: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2022-02-14 20:04:13.303122: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-02-14 20:04:13.303169: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2022-02-14 20:04:13.303176: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2022-02-14 20:04:13.303287: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10312 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2080 Ti, pci bus id: 0000:86:00.0, compute capability: 7.5)
+INFO:tensorflow:Restoring parameters from ./checkpoint/frappe/20220213/model.ckpt-300
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Finished evaluation at 2022-02-14-12:04:15
+INFO:tensorflow:Saving dict for global step 300: auc = 0.9743283, global_step = 300, logloss = 0.16908574, loss = 0.57977104, stop_criterion = 0.80524254
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 300: ./checkpoint/frappe/20220213/model.ckpt-300

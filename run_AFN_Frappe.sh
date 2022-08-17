@@ -1,0 +1,1 @@
+nohup python -u main.py --config config/AFN --expid AFN_Frappe --gpu 0 > logs/AFN_Frappe.log &

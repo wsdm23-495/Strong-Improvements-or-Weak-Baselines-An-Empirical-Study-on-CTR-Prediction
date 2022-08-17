@@ -1,0 +1,14 @@
+base_config: ./config/xDeepFM
+base_expid: xDeepFM_Frappe
+dataset_id: Frappe
+
+dataset_config:
+    Frappe:
+        data_format: h5
+        data_root: './data/'
+        train_data: ./data/Frappe/train.h5
+        valid_data: ./data/Frappe/valid.h5
+        test_data: ./data/Frappe/test.h5
+
+tuner_space:
+    cin_layer_units: [[32],[32,32],[32, 32, 32],[32,32,32,32],[32,32,32,32,32],[32,32,32,32,32,32],[32,32,32,32,32,32,32],[32,32,32,32,32,32,32,32]]
